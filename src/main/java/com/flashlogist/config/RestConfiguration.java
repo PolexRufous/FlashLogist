@@ -12,14 +12,4 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 @Configuration
 public class RestConfiguration {
 
-    @Bean
-    public MappingJackson2JsonView getMappingJackson2JsonView() {
-        return new MappingJackson2JsonView();
-    }
-
-    @Bean
-    public ContentNegotiatingViewResolver getContentNegotiatingViewResolver() {
-        return new ContentNegotiatingViewResolver();
-    }
-
 }

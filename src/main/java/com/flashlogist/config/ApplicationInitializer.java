@@ -10,7 +10,8 @@ public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherSe
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[]{
                 RestConfiguration.class,
-                BaseConfiguration.class
+                BaseConfiguration.class,
+                WebSecurityConfiguration.class
         };
     }
 
@@ -24,8 +25,7 @@ public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherSe
     @Override
     protected String[] getServletMappings() {
         return new String[]{
-                "/*",
-                "/flashlogist/*"
+                "/",
         };
     }
 }

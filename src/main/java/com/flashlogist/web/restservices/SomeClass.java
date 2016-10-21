@@ -1,4 +1,4 @@
-package com.flashlogist.web.springcontrollers;
+package com.flashlogist.web.restservices;
 
 /**
  * Created by Lex on 20.10.2016.
