@@ -1,7 +1,5 @@
-package com.flashlogist.web.restservices.vehicle;
+package com.flashlogist.web.restservices;
 
-import com.flashlogist.dom.user.User;
-import com.flashlogist.dom.user.UserManager;
 import com.flashlogist.dom.vehicle.Vehicle;
 import com.flashlogist.dom.vehicle.VehicleManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,7 @@ import java.util.Collection;
 
 @RestController
 @RequestMapping("/rest/vehicle")
-public class RestVehicleService {
+public class VehicleService {
     @Autowired
     VehicleManager vehicleManager;
 
