@@ -18,15 +18,23 @@ public class UserService {
     @GetMapping
     @ResponseBody
     @Produces(value = "application/json")
-    public ResponseEntity<Collection<User>> getAll() {
+    public ResponseEntity getAll() {
+        Collection users = userManager.getAll();
+        if (users.isEmpty()) {
+            return ResponseEntity.status(204).build();
+        }
         return ResponseEntity.status(201).body(userManager.getAll());
     }
 
     @GetMapping(value = "/{id}")
     @ResponseBody
     @Produces(value = "application/json")
-    public ResponseEntity<User> getById(@PathVariable("id") Long id) {
-        return ResponseEntity.status(201).body(userManager.getUserById(id));
+    public ResponseEntity getById(@PathVariable("id") Long id) {
+        User user = userManager.getUserById(id);
+        if (user == null) {
+            return ResponseEntity.status(204).build();
+        }
+        return ResponseEntity.status(201).body(user);
     }
 
 }
