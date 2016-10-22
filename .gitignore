@@ -4,7 +4,7 @@
 .project
 .settings
 *.iml
-
+**/database.properties
 
 # compilation
 bin

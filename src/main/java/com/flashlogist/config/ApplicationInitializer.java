@@ -11,7 +11,8 @@ public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherSe
         return new Class<?>[]{
                 RestConfiguration.class,
                 BaseConfiguration.class,
-                WebSecurityConfiguration.class
+                WebSecurityConfiguration.class,
+                DatabaseHibernateConfiguration.class
         };
     }
 
