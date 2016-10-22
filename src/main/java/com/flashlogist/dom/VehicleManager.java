@@ -1,6 +1,7 @@
-package com.flashlogist.dom.vehicle;
+package com.flashlogist.dom;
 
-import com.flashlogist.repo.vehicle.VehicleRepository;
+import com.flashlogist.database.dao.vehicle.VehicleRepository;
+import com.flashlogist.database.entities.vehicle.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

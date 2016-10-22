@@ -1,4 +1,4 @@
-package com.flashlogist.dom.vehicle;
+package com.flashlogist.database.entities.vehicle;
 
 import lombok.Data;
 

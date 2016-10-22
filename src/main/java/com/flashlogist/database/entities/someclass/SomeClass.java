@@ -1,4 +1,4 @@
-package com.flashlogist.database.entities;
+package com.flashlogist.database.entities.someclass;
 
 import lombok.AccessLevel;
 import lombok.Getter;

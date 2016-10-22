@@ -17,10 +17,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-/**
- * Created by Lex on 22.10.2016.
- */
-
 @Configuration
 @EnableTransactionManagement
 @PropertySource("classpath:database/database.properties")

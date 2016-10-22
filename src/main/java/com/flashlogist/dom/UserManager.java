@@ -1,6 +1,7 @@
-package com.flashlogist.dom.user;
+package com.flashlogist.dom;
 
-import com.flashlogist.repo.user.UserRepository;
+import com.flashlogist.database.dao.user.UserRepository;
+import com.flashlogist.database.entities.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

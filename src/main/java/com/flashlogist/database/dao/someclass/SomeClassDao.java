@@ -1,12 +1,9 @@
-package com.flashlogist.database.dao;
+package com.flashlogist.database.dao.someclass;
 
-import com.flashlogist.database.entities.SomeClass;
+import com.flashlogist.database.entities.someclass.SomeClass;
 
 import java.util.List;
 
-/**
- * Created by Lex on 22.10.2016.
- */
 public interface SomeClassDao {
 
     SomeClass save(SomeClass someClass);

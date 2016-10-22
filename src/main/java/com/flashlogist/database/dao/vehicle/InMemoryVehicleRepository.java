@@ -1,7 +1,7 @@
-package com.flashlogist.repo.vehicle;
+package com.flashlogist.database.dao.vehicle;
 
-import com.flashlogist.dom.vehicle.Vehicle;
-import com.flashlogist.dom.vehicle.VehicleType;
+import com.flashlogist.database.entities.vehicle.Vehicle;
+import com.flashlogist.database.entities.vehicle.VehicleType;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;

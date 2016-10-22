@@ -1,6 +1,6 @@
-package com.flashlogist.repo.user;
+package com.flashlogist.database.dao.user;
 
-import com.flashlogist.dom.user.User;
+import com.flashlogist.database.entities.user.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;

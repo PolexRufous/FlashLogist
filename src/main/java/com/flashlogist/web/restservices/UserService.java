@@ -1,7 +1,7 @@
 package com.flashlogist.web.restservices;
 
-import com.flashlogist.dom.user.User;
-import com.flashlogist.dom.user.UserManager;
+import com.flashlogist.database.entities.user.User;
+import com.flashlogist.dom.UserManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

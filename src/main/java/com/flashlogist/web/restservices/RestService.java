@@ -1,7 +1,7 @@
 package com.flashlogist.web.restservices;
 
-import com.flashlogist.database.dao.SomeClassDao;
-import com.flashlogist.database.entities.SomeClass;
+import com.flashlogist.database.dao.someclass.SomeClassDao;
+import com.flashlogist.database.entities.someclass.SomeClass;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.ws.rs.Produces;
-import java.util.List;
 
 /**
  * Created by Lex on 20.10.2016.

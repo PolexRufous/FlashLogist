@@ -1,6 +1,6 @@
-package com.flashlogist.database.dao;
+package com.flashlogist.database.dao.someclass;
 
-import com.flashlogist.database.entities.SomeClass;
+import com.flashlogist.database.entities.someclass.SomeClass;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -8,10 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
-
-/**
- * Created by Lex on 22.10.2016.
- */
 
 @Repository("someClassDao")
 @Transactional

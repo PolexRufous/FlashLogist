@@ -1,7 +1,7 @@
 package com.flashlogist.web.restservices;
 
-import com.flashlogist.dom.vehicle.Vehicle;
-import com.flashlogist.dom.vehicle.VehicleManager;
+import com.flashlogist.database.entities.vehicle.Vehicle;
+import com.flashlogist.dom.VehicleManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

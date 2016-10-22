@@ -1,4 +1,4 @@
-package com.flashlogist.dom.user;
+package com.flashlogist.database.entities.user;
 
 import lombok.Data;
 
