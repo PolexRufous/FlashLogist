@@ -18,15 +18,23 @@ public class VehicleService {
     @GetMapping
     @ResponseBody
     @Produces(value = "application/json")
-    public ResponseEntity<Collection<Vehicle>> getAll() {
-        return ResponseEntity.status(201).body(vehicleManager.getAll());
+    public ResponseEntity getAll() {
+        Collection<Vehicle> vehicles = vehicleManager.getAll();
+        if(vehicles.isEmpty()) {
+            return ResponseEntity.status(204).build();
+        }
+        return ResponseEntity.status(201).body(vehicles);
     }
 
     @GetMapping(value = "/{id}")
     @ResponseBody
     @Produces(value = "application/json")
-    public ResponseEntity<Vehicle> getById(@PathVariable("id") Long id) {
-        return ResponseEntity.status(201).body(vehicleManager.getById(id));
+    public ResponseEntity getById(@PathVariable("id") Long id) {
+        Vehicle vehicle = vehicleManager.getById(id);
+        if (vehicle == null) {
+            return ResponseEntity.status(204).build();
+        }
+        return ResponseEntity.status(201).body(vehicle);
     }
 
 }

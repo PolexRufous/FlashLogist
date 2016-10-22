@@ -23,7 +23,7 @@ public class UserService {
         if (users.isEmpty()) {
             return ResponseEntity.status(204).build();
         }
-        return ResponseEntity.status(201).body(userManager.getAll());
+        return ResponseEntity.status(201).body(users);
     }
 
     @GetMapping(value = "/{id}")
