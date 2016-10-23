@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -19,7 +20,10 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@PropertySource("classpath:database/database.properties")
+@PropertySources({
+        @PropertySource("classpath:database/database.properties"),
+        @PropertySource("classpath:database/validation.properties")
+})
 public class DatabaseHibernateConfiguration {
 
     @Value("${database.driver.class}")
@@ -45,6 +49,9 @@ public class DatabaseHibernateConfiguration {
 
     @Value("${hibernate.generate.ddl.statistics}")
     private String hibernateGenerateStatistics;
+
+    @Value("${hibernate.hbm2ddl.import.files}")
+    private String hibernateDatabaseInitialDataFile;
 
     @Value("${package.to.scan.entities}")
     private String packageToScanEntities;
@@ -92,6 +99,7 @@ public class DatabaseHibernateConfiguration {
         properties.setProperty("hibernate.dialect", hibernateDialect);
         properties.setProperty("hibernate.show_sql", hibernateShowSql);
         properties.setProperty("hibernate.generate_statistics", hibernateGenerateStatistics);
+        properties.setProperty("hibernate.hbm2ddl.import_files", hibernateDatabaseInitialDataFile);
 
         return properties;
     }

@@ -8,21 +8,23 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import javax.sql.DataSource;
+
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
+    private DataSource dataSource;
+
+    @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .inMemoryAuthentication()
-                    .withUser("user")  // user
-                    .password("user")
-                    .roles("USER")
-                .and()
-                    .withUser("admin") // admin
-                    .password("admin")
-                    .roles("ADMIN","USER");
+                .jdbcAuthentication().dataSource(dataSource)
+                    .usersByUsernameQuery(
+                        "select login, password, available from GLOBAL_USER where login=?")
+                    .authoritiesByUsernameQuery(
+                        "select GLOBAL_USER.login, GLOBAL_USER_ROLE.name from GLOBAL_USER, GLOBAL_USER_ROLE where GLOBAL_USER.login=?");
     }
 
     @Override
@@ -38,8 +40,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                     .antMatchers("/login").permitAll()
-                    .antMatchers("/main").hasRole("USER")
-                    .antMatchers("/rest/**").hasAnyRole("USER", "ADMIN")
+                    .antMatchers("/main").hasAnyAuthority("USER", "ADMIN")//  hasRole("USER")
+                    .antMatchers("/rest/**").hasAnyAuthority("USER", "ADMIN") //hasAnyRole("USER", "ADMIN")
                     .anyRequest().denyAll()
                 .and()
                     .formLogin()

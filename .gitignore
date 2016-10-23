@@ -5,6 +5,7 @@
 .settings
 *.iml
 **/database.properties
+**/initial-database.sql
 
 # compilation
 bin
