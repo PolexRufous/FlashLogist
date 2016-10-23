@@ -6,13 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.ws.rs.Produces;
 import java.util.Collection;
 
 @RestController
 @RequestMapping("/rest/user")
 public class UserService {
-    @Autowired
+
+    @Resource(name = "userManager")
     UserManager userManager;
 
     @GetMapping
