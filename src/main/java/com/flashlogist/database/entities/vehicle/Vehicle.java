@@ -11,7 +11,7 @@ import java.sql.Date;
 
 @Data
 @Entity
-@Table(name = "GLOBAL_USER", uniqueConstraints = {
+@Table(name = "GLOBAL_VEHICLE", uniqueConstraints = {
         @UniqueConstraint(columnNames = "id"),
         @UniqueConstraint(columnNames = "name"),
         @UniqueConstraint(columnNames = "regnumber")

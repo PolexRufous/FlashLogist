@@ -53,6 +53,9 @@ public class DatabaseHibernateConfiguration {
     @Value("${hibernate.hbm2ddl.import.files}")
     private String hibernateDatabaseInitialDataFile;
 
+    @Value("${hibernate.connection.pool.size}")
+    private String hibernateConnectionPoolSize;
+
     @Value("${package.to.scan.entities}")
     private String packageToScanEntities;
 
@@ -100,6 +103,7 @@ public class DatabaseHibernateConfiguration {
         properties.setProperty("hibernate.show_sql", hibernateShowSql);
         properties.setProperty("hibernate.generate_statistics", hibernateGenerateStatistics);
         properties.setProperty("hibernate.hbm2ddl.import_files", hibernateDatabaseInitialDataFile);
+        properties.setProperty("hibernate.connection.pool_size", hibernateConnectionPoolSize);
 
         return properties;
     }
