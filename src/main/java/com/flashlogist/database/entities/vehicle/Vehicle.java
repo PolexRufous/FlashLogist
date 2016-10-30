@@ -4,7 +4,6 @@ import lombok.Data;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
-import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.sql.Date;
 
@@ -36,9 +35,9 @@ public class Vehicle {
     @Column(name = "regnumber", unique = true, nullable = false)
     private String regnumber;
 
-    @ManyToOne
-    @Valid
-    @JoinColumn(name="type")
+    @NotNull(message="Type cannot be null")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type", nullable = false)
     private VehicleType type;
 
     @Past(message="Manufactoring date cannot be future")
