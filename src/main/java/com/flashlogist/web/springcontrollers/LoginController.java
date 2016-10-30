@@ -22,7 +22,7 @@ public class LoginController {
         if (logout != null) {
             modelAndView.addObject("message", "You was logged out");
         } else if (error != null) {
-            modelAndView.addObject("message", "Error login or password");
+            modelAndView.addObject("message", "Wrong login or password");
         }
 
         return modelAndView;

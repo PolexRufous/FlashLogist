@@ -24,7 +24,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .usersByUsernameQuery(
                         "select login, password, available from GLOBAL_USER where login=?")
                     .authoritiesByUsernameQuery(
-                        "select GLOBAL_USER.login, GLOBAL_USER_ROLE.name from GLOBAL_USER, GLOBAL_USER_ROLE where GLOBAL_USER.login=?");
+                        "select login, role from GLOBAL_USER where login=?");
     }
 
     @Override
@@ -42,6 +42,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                     .antMatchers("/login").permitAll()
                     .antMatchers("/main").hasAnyAuthority("USER", "ADMIN")
+                    .antMatchers("/admin/**").hasAuthority("ADMIN")
+                    .antMatchers("/user/**").hasAnyAuthority("USER", "ADMIN")
                     .antMatchers("/rest/**").hasAnyAuthority("USER", "ADMIN")
                     .anyRequest().denyAll()
                 .and()

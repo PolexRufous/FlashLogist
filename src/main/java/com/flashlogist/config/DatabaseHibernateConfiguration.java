@@ -20,10 +20,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@PropertySources({
-        @PropertySource("classpath:database/database.properties"),
-        @PropertySource("classpath:database/validation.properties")
-})
+@PropertySource("classpath:database/database.properties")
 public class DatabaseHibernateConfiguration {
 
     @Value("${database.driver.class}")

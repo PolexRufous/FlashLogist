@@ -5,7 +5,6 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -61,8 +60,8 @@ public class User {
     @Column(name = "email", unique = true, nullable = false)
     private String email;
 
-    @ManyToOne
-    @Valid
-    @JoinColumn(name="role")
+    @NotNull(message="Role cannot be null")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false)
     private UserRole role;
 }
