@@ -1,6 +1,7 @@
 package com.flashlogist.user.dao;
 
 import lombok.Data;
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -35,6 +36,7 @@ public class User {
     @Pattern(regexp="[A-Za-z0-9_]+", message="Use only ASCII letters, digits and _ simbol")
     @Size(min = 6, max = 24, message="Password cannot be less than {min} letters and longer than {max} lettets")
     @Column(name = "password", nullable = false)
+    @JsonIgnore
     private String password;
 
     @Column(name = "available")

@@ -40,10 +40,7 @@ public class RoutRecord {
     @ManyToOne
     private User driver;
 
-    @ElementCollection
-    @CollectionTable(
-            name="record_hubs",
-            joinColumns = @JoinColumn(name = "record_id")
-    )
-    private Collection<TransportHub> transportHubs;
+    //TODO: to be implemented
+//    @OneToMany
+//    private Collection<TransportHub> transportHubs;
 }
