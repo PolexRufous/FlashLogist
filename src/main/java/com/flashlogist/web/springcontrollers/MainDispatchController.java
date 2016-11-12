@@ -23,12 +23,10 @@ public class MainDispatchController {
                 return "redirect:/admin";
             } else if (hasUserAuthority("USER")) {
                 return "redirect:/user";
-            } else {
-                return "redirect:/other";
             }
-        } else {
-            return "redirect:/403";
         }
+
+        return "redirect:/403";
     }
 
     @SuppressWarnings("unchecked")

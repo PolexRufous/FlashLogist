@@ -1,0 +1,3 @@
+INSERT INTO GLOBAL_USER (id, login, password, available, firstname, lastname, email, role) VALUES (1, 'user', 'user', true, 'User', 'Userovich', 'user@email.com', 'USER');
+INSERT INTO GLOBAL_USER (id, login, password, available, firstname, lastname, email, role) VALUES (2, 'admin', 'admin', true, 'Admin', 'Adminin', 'admin@email.com', 'ADMIN');
+INSERT INTO GLOBAL_USER (id, login, password, available, firstname, lastname, email, role) VALUES (3, 'locked', 'locked', false, 'Locked', 'Lockedov', 'locked@email.com', 'ADMIN');

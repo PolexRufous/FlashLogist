@@ -4,8 +4,8 @@
 .project
 .settings
 *.iml
-**/database.properties
-**/initial-database.sql
+**/main/**/database.properties
+**/main/**/initial-database.sql
 
 # compilation
 bin
