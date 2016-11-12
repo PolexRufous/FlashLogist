@@ -41,7 +41,6 @@ public class MainDispatchController {
                     getContext().getAuthentication().getAuthorities();
             for (GrantedAuthority gAuthority : authorities) {
                 result = gAuthority.getAuthority().equals(authority);
-                System.out.println(gAuthority);
                 if (result) {
                     break;
                 }
