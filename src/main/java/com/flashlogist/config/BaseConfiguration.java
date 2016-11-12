@@ -12,10 +12,6 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 import java.util.Collections;
 
 @Configuration
-@ComponentScan(value = {
-        "com.flashlogist.dom",
-        "com.flashlogist.database.dao"
-})
 public class BaseConfiguration {
 
     /**

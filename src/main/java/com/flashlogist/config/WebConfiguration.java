@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.flashlogist.web")
+@ComponentScan("com.flashlogist")
 public class WebConfiguration extends WebMvcConfigurerAdapter {
 
 
