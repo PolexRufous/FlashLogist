@@ -1,13 +1,12 @@
 package com.flashlogist.rout.dao;
 
-import com.flashlogist.utils.dao.LocalDateConverter;
-import com.flashlogist.user.dao.User;
+import com.flashlogist.global.utils.dao.LocalDateConverter;
+import com.flashlogist.global.user.dao.User;
 import com.flashlogist.vehicle.dao.Vehicle;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Collection;
 
 @Data
 @Entity
