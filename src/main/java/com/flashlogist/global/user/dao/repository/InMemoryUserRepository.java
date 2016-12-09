@@ -58,4 +58,14 @@ public class InMemoryUserRepository implements UserRepository {
     public void save(User user) {
 
     }
+
+    @Override
+    public void delete(User user) {
+
+    }
+
+    @Override
+    public User update(User user) {
+        return null;
+    }
 }

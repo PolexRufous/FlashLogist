@@ -1,0 +1,11 @@
+{
+  "directory": "src/main/webapp/resources/vendors",
+  "scripts": {
+    "preinstall": "",
+    "postinstall": "",
+    "preuninstall": ""
+  },
+  "ignoredDependencies": [
+    "jquery"
+  ]
+}

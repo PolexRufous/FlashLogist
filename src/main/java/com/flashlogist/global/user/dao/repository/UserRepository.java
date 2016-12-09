@@ -6,10 +6,9 @@ import java.util.Collection;
 
 public interface UserRepository {
     Collection<User> getAll();
-
     User getUserById(Long id);
-
     User getUserByEmail(String email);
-
     void save(User user);
+    void delete(User user);
+    public User update(User user);
 }
