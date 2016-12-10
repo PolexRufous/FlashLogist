@@ -1,13 +1,20 @@
 package com.flashlogist.global.springcontrollers;
 
+import com.flashlogist.applications.global.Application;
+import com.flashlogist.applications.global.ApplicationUtils;
+import com.flashlogist.global.user.dao.UserRole;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.springframework.security.core.context.SecurityContextHolder.getContext;
 
@@ -24,6 +31,15 @@ public class MainDispatchController {
 
         return "redirect:/403";
     }
+
+    @ModelAttribute(value = "applications")
+    public List<Application> setApplications() {
+        return getContext().getAuthentication().getAuthorities().stream()
+                .map(authority -> ApplicationUtils.getApplicationsForRole(UserRole.valueOf(authority.getAuthority())))
+                .flatMap(List::stream)
+                .collect(Collectors.toList());
+    }
+
 
     @SuppressWarnings("unchecked")
     private boolean hasUserAuthority(String authority) {
