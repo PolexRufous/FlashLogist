@@ -18,9 +18,8 @@ public class ApplicationUtils {
     }
 
     public static List<Application> getApplicationsForRole(UserRole userRole) {
-        return applicationMap.entrySet().stream()
-                .filter(entry -> entry.getValue().isAvailableForRole(userRole))
-                .map(Map.Entry::getValue)
+        return applicationMap.values().stream()
+                .filter(application -> application.isAvailableForRole(userRole))
                 .collect(Collectors.toList());
     }
 

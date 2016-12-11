@@ -4,3 +4,38 @@
     box-sizing: border-box;
 }
 
+.main-header {
+    position: relative;
+    width: 100%;
+    background: red;
+}
+
+.main-header > nav {
+    text-align: center;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.main-header > nav > ul {
+    text-align: center;
+    width: 100%;
+    overflow: auto;
+    table-layout: fixed;
+    display: table;
+    padding: 1vh;
+}
+
+.menu-container > li {
+    display: table-cell;
+    text-align: center;
+    width: auto;
+}
+
+.main-content {
+
+}
+
+.main-footer {
+
+}
+

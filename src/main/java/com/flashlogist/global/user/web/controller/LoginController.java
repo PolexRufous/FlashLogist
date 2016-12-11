@@ -15,11 +15,6 @@ import static org.springframework.security.core.context.SecurityContextHolder.ge
 @RequestMapping("/login")
 public class LoginController {
 
-    @ModelAttribute(value = "principal")
-    public String setPrincipal() {
-        return null;
-    }
-
     @GetMapping
     public ModelAndView loginForm(@RequestParam(value = "logout", required = false) String logout,
                                   @RequestParam(value = "error", required = false) String error) {
