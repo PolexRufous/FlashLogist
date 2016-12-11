@@ -1,3 +1,3 @@
-<main class="main-content">
+<main class="main-content wrapper">
 
 </main>

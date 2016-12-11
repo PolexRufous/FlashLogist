@@ -1,18 +1,281 @@
-* {
+/*--------------------------------------------------------------
+
+>>> TABLE OF CONTENTS:
+
+----------------------------------------------------------------
+
+0.0 Reset
+
+1.0 Grid
+
+2.0 Typography
+
+3.0 Elements
+
+    3.1 Header
+
+    3.2 Content
+
+    3.3 Footer
+
+4.0 Forms
+
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+
+0.0 Reset
+
+--------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+details, embed, figure, figcaption, footer, header, menu, nav,
+output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt,
+var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,
+caption, tbody, tfoot, thead, tr, th, td {
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-.main-header {
+body {
+    background-color: #FFFFFF;
+    height: 100%;
+    word-wrap: break-word;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, nav,
+section {
+    display: block;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    font-weight: normal;
+    text-align: left;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
+}
+
+blockquote, q {
+    quotes: "" "";
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:hover, a:active {
+    outline: 0;
+}
+
+a img {
+    border: 0;
+}
+
+hr {
+    border-bottom: 0;
+    border-top: 1px solid #6590b3;
+    margin: 1.5em 0;
+    border-left: 0;
+}
+/*--------------------------------------------------------------
+
+2.0 Typography
+
+--------------------------------------------------------------*/
+body, button, input, select, textarea {
+    color: #34495E;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin: 0;
+    vertical-align: bottom;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 40px;
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 30px;
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 22px;
+    font-size: 2.2rem;
+}
+
+h4 {
+    font-size: 20px;
+    font-size: 2rem;
+}
+
+h5 {
+    font-size: 18px;
+    font-size: 1.8rem;
+}
+
+h6 {
+    font-size: 16px;
+    font-size: 1.6rem;
+}
+
+p {
+    margin-bottom: 1.5em;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+dfn, cite, em, i {
+    font-style: italic;
+}
+
+blockquote {
+    margin: 0 1.5em;
+}
+
+address {
+    margin: 0 0 1.5em;
+}
+
+pre {
+    background: #F5F5F5;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1.6em;
+    border: 1px solid #ECF0F1;
+}
+
+code, kbd, tt, var {
+    font-size: 15px;
+    font-size: 1.5rem;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono",
+    monospace;
+}
+
+abbr, acronym {
+    border-bottom: 1px dotted #34495E;
+    cursor: help;
+}
+
+mark, ins {
+    background: #b9c8d8;
+    text-decoration: none;
+}
+
+sup, sub {
+    font-size: 75%;
+    height: 0;
+    line-height: 0;
     position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    bottom: 1ex;
+}
+
+sub {
+    top: .5ex;
+}
+
+small {
+    font-size: 75%;
+}
+
+big {
+    font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+
+3.0 Elements
+
+--------------------------------------------------------------*/
+
+.wrapper {
+    width:1180px;
+    margin:auto;
+
+}
+
+.wrapper > header, .wrapper > main, .wrapper > footer {
+    max-width: 1305px;
+}
+/*--------------------------------------------------------------
+
+3.1 Header
+
+--------------------------------------------------------------*/
+
+.main-header {
+    osition: relative;
+    overflow: auto;
     width: 100%;
-    background: red;
+    height: 4em;
+    background: #c6cef5;
+    margin-bottom: 1em;
 }
 
 .main-header > nav {
     text-align: center;
-    width: 90vw;
+    width: calc(100% - 150px);
     margin: 0 auto;
 }
 
@@ -31,11 +294,155 @@
     width: auto;
 }
 
-.main-content {
-
+#logout {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.5em;
 }
+
+.menu-container{
+    padding: 0.5em 0;
+}
+.menu-container > li a {
+    text-decoration: none;
+    background: #57a97c;
+    padding: 0.5em;
+    display: block;
+    position: relative;
+    border: 1px solid #c6cef5;
+    width: 100%;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.menu-container > li a:hover {
+    background: gray;
+}
+
+/* Drop down list*/
+
+li.parent ul {
+    overflow: hidden;
+    position: absolute;
+}
+
+li.parent input[type=checkbox] {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    top: 0;
+    left: 0;
+}
+li.parent input[type=checkbox]:checked ~ ul {
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
+    transform: translate(0, 50%);
+}
+li.parent input[type=checkbox]:checked ~ i:before {
+    transform: translate(2px, 0) rotate(45deg);
+}
+li.parent input[type=checkbox]:checked ~ i:after {
+    transform: translate(-2px, 0) rotate(-45deg);
+}
+li.parent li i {
+    position: absolute;
+    transform: translate(-6px, 0);
+    margin-top: 16px;
+    right: 0;
+}
+li.parent li i:before, li.parent li i:after {
+    content: "";
+    position: absolute;
+    background-color: #ff6873;
+    width: 3px;
+    height: 9px;
+}
+
+li.parent li i:before {
+    transform: translate(-2px, 0) rotate(45deg);
+    transition: all 0.25s ease-in-out;
+}
+li.parent li i:after {
+    transform: translate(2px, 0) rotate(-45deg);
+    transition: all 0.25s ease-in-out;
+}
+
+@keyframes flipdown {
+    0% {
+        opacity: 0;
+        transform-origin: top center;
+        transform: rotateX(-90deg);
+    }
+    5% {
+        opacity: 1;
+    }
+    80% {
+        transform: rotateX(8deg);
+    }
+    83% {
+        transform: rotateX(6deg);
+    }
+    92% {
+        transform: rotateX(-3deg);
+    }
+    100% {
+        transform-origin: top center;
+        transform: rotateX(0deg);
+    }
+}
+
+/*--------------------------------------------------------------
+
+3.1 Content
+
+--------------------------------------------------------------*/
+
+.main-content {
+    min-height: calc(100vh - 5em);
+    margin-bottom: -4em;
+    position: relative;
+    display: block;
+}
+
+/*--------------------------------------------------------------
+
+3.1 Footer
+
+--------------------------------------------------------------*/
 
 .main-footer {
-
+    background: #000;
+    color: #BABABA;
+    width: 100%;
+    height: 4em;
+    bottom: 0;
+    left: 0;
+    clear: both;
+    position: relative;
+    display: block;
 }
 
+
+/*--------------------------------------------------------------
+
+4.0 Forms
+
+--------------------------------------------------------------*/
+
+input[type='submit'], button {
+    border: none;
+    padding: 0.2em 0.5em;
+    background: #57a97c;
+    color: white;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+input[type='submit']:hover, button:hover {
+    background: #4a8a67;
+}
