@@ -5,12 +5,14 @@ import com.flashlogist.applications.global.ApplicationUtils;
 import com.flashlogist.global.user.dao.UserRole;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -30,6 +32,11 @@ public class MainDispatchController {
         }
 
         return "redirect:/403";
+    }
+
+    @ModelAttribute(value = "principal")
+    public String setPrincipal() {
+        return ((User) getContext().getAuthentication().getPrincipal()).getUsername();
     }
 
     @ModelAttribute(value = "applications")

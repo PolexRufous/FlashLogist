@@ -1,0 +1,47 @@
+header.main-header {
+    width: 100%;
+    color: #b0b0b0;
+    background-color: #c0c0c0;
+    position: relative;
+}
+
+.main-header nav {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 100%;
+    text-align: center;
+}
+
+.main-header nav .menu-container {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+.menu-container > li {
+    display: inline-block;
+    width: 30%;
+    height: inherit;
+    border: 1px solid #b0b0b0;
+}
+
+.menu-container > li.parent {
+    position: relative;
+}
+
+li.parent > ul {
+    position: absolute;
+    display: none;
+}
+
+li.parent:after {
+    content:  "\25BE";
+}
+
+li.parent:hover > ul {
+    display: block;
+}
+
+header .menu-link {
+    text-decoration: none;
+}

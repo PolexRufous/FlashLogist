@@ -2,12 +2,13 @@
 <html>
 <head>
     <title>FL Login</title>
+    <#include "baseparts/base.css.ftl" >
     <link rel="stylesheet" href="<@spring.url '/resources/global/css/loginPage.css'/>">
-    <link rel="stylesheet" href="<@spring.url '/resources//global/css/default.css'/>">
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
 </head>
 <body>
+<#include "baseparts/header.ftl" >
 <main>
     <div class="delimiter"></div>
     <div class="pure-g">

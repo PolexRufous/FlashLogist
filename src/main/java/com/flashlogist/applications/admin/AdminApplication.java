@@ -8,7 +8,7 @@ import java.util.List;
 
 public class AdminApplication implements Application {
 
-    private List<UserRole> ADMIN_ACCESSES = Arrays.asList(UserRole.ADMIN);
+    private List<UserRole> ADMIN_ACCESSES = Arrays.asList(UserRole.ADMIN, UserRole.USER);
     private String ADMIN_URL = "/admin";
     private String ADMIN_NAME = "admin";
     private String ADMIN_SHOW_NAME = "Admin";
@@ -20,13 +20,11 @@ public class AdminApplication implements Application {
     @Override
     public boolean isAvailableForRole(UserRole userRole) {
         return ADMIN_ACCESSES.stream()
-                .filter(role -> userRole == role)
-                .findAny()
-                .isPresent();
+                .anyMatch(role -> userRole == role);
     }
 
     @Override
-    public String getURL() {
+    public String getUrl() {
         return ADMIN_URL;
     }
 

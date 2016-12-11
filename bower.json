@@ -18,7 +18,6 @@
   "dependencies": {
     "jQuery": "~3.1.1",
     "requirejs": "~2.3.2",
-    "require-css": "^0.1.8",
-    "pure": "purecss#^0.6.0"
+    "require-css": "~0.1.8"
   }
 }
