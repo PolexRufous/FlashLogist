@@ -1,7 +1,7 @@
 .main-header {
     width: 100%;
     color: #b0b0b0;
-    background: #5b5d70;
+    background: #eee;
     position: relative;
 }
 
@@ -21,30 +21,51 @@
 .menu-container > li {
     display: table-cell;
     width: 20%;
-    border: 1px solid #b0b0b0;
     height: 50%;
     margin: 0 20px;
     position: relative;
-
-}
-
-.menu-container > li.parent {
-    position: relative;
+    padding: 0 30px;
 }
 
 li.parent > ul {
     position: absolute;
+    text-align: center;
     display: none;
+    width: 100%;
+    height: 100%;
+}
+
+li.parent > ul > li {
+    text-align: center;
+    display: block;
+    width: 80.5%;
+    height: inherit;
+    color: #7f7f5f;
+    font-size: 2em;
+    padding-top: .5vh;
+    background: #d9e0ca;
 }
 
 .menu-span {
-    display: inline-block;
-    background-color: #1e74f1;
+    padding: 5px 0;
+    display: block;
+    background-color: #d0cdcd;
     font-size: 2em;
     width: 100%;
     height: 100%;
-    color: cornsilk;
+    color: #71665b;
+    border: 1px solid #ddd;
+    position: relative;
+}
 
+.menu-span.span-user {
+    background: #e2dfb5;
+}
+
+.menu-span > a {
+    display: block;
+    height: 100%;
+    position: relative;
 }
 
 .parent-span:after {
@@ -63,4 +84,12 @@ li.parent:hover {
 .main-header .menu-link {
     color: inherit;
     text-decoration: none;
+}
+
+#logout {
+    display: none;
+}
+
+.input-label {
+    cursor: pointer;
 }

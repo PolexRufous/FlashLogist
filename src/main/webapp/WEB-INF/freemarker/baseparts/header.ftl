@@ -20,14 +20,15 @@
             </#if>
             <#if principal??>
                 <li class="parent">
-                    <span class=" menu-span parent-span">${principal}</span>
+                    <span class=" menu-span parent-span span-user">${principal}</span>
                     <ul>
                         <li>
                             <form action="<@spring.url '/logout' />" method="post">
+                                <label class="input-label" for="logout">Log Out</label>
                                 <input type="hidden"
                                        name="${_csrf.parameterName}"
                                        value="${_csrf.token}"/>
-                                <input type="submit" value="Log Out" class="logout-button" />
+                                <input id="logout" type="submit" value="Log Out" class="logout-button" />
                             </form>
                         </li>
                     </ul>
