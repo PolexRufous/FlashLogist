@@ -1,10 +1,3 @@
-.info-message {
-    display: block;
-    text-align: left;
-    padding-left: 8em;
-    color: #a3602a;
-}
-
 .delimiter {
     height: 20%;
 }
@@ -14,4 +7,57 @@
     border-radius: 4px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     background: rgb(28, 184, 65);
+}
+
+.login-wrapper {
+    width: 70%;
+    margin: 10vh auto;
+}
+
+.login-form-container {
+    border: 5px solid #bdb690;
+    border-radius: 15px;
+    font-size: 2em;
+    color: #5e6749;
+}
+
+.login-form-part {
+    clear: both;
+    margin: 2% 1%;
+}
+
+
+
+.login-form-part > label {
+    display: block;
+    width: 40%;
+    float: left;
+    font-size: 1.3em;
+    padding: 2%;
+}
+
+.login-form-part > input {
+    display: block;
+    border-radius: 10px;
+    font-size: 1em;
+    padding: 2%;
+    margin: 1%;
+}
+
+.login-form-part > input:active, .login-form-part > input:focus {
+    border: none;
+}
+
+.login-form-buttons > input {
+    float: none;
+    margin: auto;
+    width: 70%;
+}
+
+.login-form-messages > label {
+    float: none;
+    margin: auto;
+    color: #a3602a;
+    width: 70%;
+    text-align: center;
 }
