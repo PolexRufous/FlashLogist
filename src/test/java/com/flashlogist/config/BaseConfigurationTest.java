@@ -1,7 +1,9 @@
 package com.flashlogist.config;
 
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -20,15 +22,11 @@ import static junit.framework.TestCase.assertNotNull;
 @WebAppConfiguration
 public class BaseConfigurationTest {
 
-    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-    @Resource(name = "applicationProperties")
-    private Properties properties;
+    @Value("${application.admin.access}")
+    String value;
 
     @Test
     public void testPropertyExist() throws Exception {
-        //when
-        String value = properties.getProperty("application.admin.access");
-
         //then
         assertNotNull("Returns null value that not expected", value);
         assertEquals("Incorrect value returned", "ADMIN", value);

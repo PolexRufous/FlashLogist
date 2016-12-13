@@ -1,42 +1,59 @@
 package com.flashlogist.applications.admin;
 
 import com.flashlogist.applications.global.Application;
+import com.flashlogist.config.BaseConfiguration;
 import com.flashlogist.global.user.dao.UserRole;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
+@Configurable
 public class AdminApplication implements Application {
 
-    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-    @Resource(name = "applicationProperties")
-    private Properties properties;
+    @Value("${application.admin.access}")
+    private String adminAccess;
 
-    private List<UserRole> ADMIN_ACCESSES = Arrays.asList(UserRole.ADMIN, UserRole.USER);
+    @Value("${application.admin.url}")
+    private String adminUrl;
+
+    @Value("${application.admin.name}")
+    private String adminName;
+
+    @Value("${application.admin.display.name}")
+    private String adminShowName;
+
+    @Value("${application.admin.available}")
+    private String adminAvailable;
+
+
 
     public AdminApplication() {
     }
 
     @Override
     public boolean isAvailableForRole(UserRole userRole) {
-        return Boolean.getBoolean(properties.getProperty("application.admin.available"))
-                && ADMIN_ACCESSES.stream().anyMatch(role -> userRole == role);
+        List<String> ADMIN_ACCESSES = Arrays.asList(adminAccess.split(","));
+        return Boolean.getBoolean(adminAvailable)
+                && ADMIN_ACCESSES.stream().anyMatch(role -> userRole.toString().equalsIgnoreCase(role));
     }
 
     @Override
     public String getUrl() {
-        return properties.getProperty("application.admin.url");
+        return adminUrl;
     }
 
     @Override
     public String getName() {
-        return properties.getProperty("application.admin.name");
+        return adminName;
     }
 
     @Override
     public String getShowName() {
-        return properties.getProperty("application.admin.display.name");
+        return adminShowName;
     }
 }
