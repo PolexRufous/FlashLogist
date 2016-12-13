@@ -3,38 +3,40 @@ package com.flashlogist.applications.admin;
 import com.flashlogist.applications.global.Application;
 import com.flashlogist.global.user.dao.UserRole;
 
+import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Properties;
 
 public class AdminApplication implements Application {
 
-    private List<UserRole> ADMIN_ACCESSES = Arrays.asList(UserRole.ADMIN, UserRole.USER);
-    private String ADMIN_URL = "/admin";
-    private String ADMIN_NAME = "admin";
-    private String ADMIN_SHOW_NAME = "Admin";
+    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+    @Resource(name = "applicationProperties")
+    private Properties properties;
 
+    private List<UserRole> ADMIN_ACCESSES = Arrays.asList(UserRole.ADMIN, UserRole.USER);
 
     public AdminApplication() {
     }
 
     @Override
     public boolean isAvailableForRole(UserRole userRole) {
-        return ADMIN_ACCESSES.stream()
-                .anyMatch(role -> userRole == role);
+        return Boolean.getBoolean(properties.getProperty("application.admin.available"))
+                && ADMIN_ACCESSES.stream().anyMatch(role -> userRole == role);
     }
 
     @Override
     public String getUrl() {
-        return ADMIN_URL;
+        return properties.getProperty("application.admin.url");
     }
 
     @Override
     public String getName() {
-        return ADMIN_NAME;
+        return properties.getProperty("application.admin.name");
     }
 
     @Override
     public String getShowName() {
-        return ADMIN_SHOW_NAME;
+        return properties.getProperty("application.admin.display.name");
     }
 }

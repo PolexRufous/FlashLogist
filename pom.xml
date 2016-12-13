@@ -116,11 +116,11 @@
 
         <!-- DATABASE -->
         <!-- MySQL is utilized by default -->
-        <dependency>
+        <!--<dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
-        </dependency>
+        </dependency>-->
         <!-- H2 for testing -->
         <dependency>
             <groupId>com.h2database</groupId>

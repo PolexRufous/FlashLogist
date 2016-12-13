@@ -1,15 +1,17 @@
 package com.flashlogist.config;
 
+import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
+
+import java.io.IOException;
+import java.util.Properties;
 
 @Configuration
 @ComponentScan(value = {
         "com.flashlogist"
-})
-@PropertySources({
-        @PropertySource({"classpath:applications/applications.properties"})
 })
 public class BaseConfiguration {
 
@@ -25,8 +27,18 @@ public class BaseConfiguration {
 
     //To resolve ${} in @Value
     @Bean
-    public static PropertySourcesPlaceholderConfigurer propertyConfigInDev() {
+    public PropertySourcesPlaceholderConfigurer propertyConfigInDev() {
         return new PropertySourcesPlaceholderConfigurer();
+    }
+
+    @Bean(name = "applicationProperties")
+    public Properties properties() throws IOException {
+        PropertiesFactoryBean propertiesFactoryBean = new PropertiesFactoryBean();
+        propertiesFactoryBean.setSingleton(true);
+        propertiesFactoryBean
+                .setLocation(new ClassPathResource("applications/applications.properties"));
+        propertiesFactoryBean.afterPropertiesSet();
+        return propertiesFactoryBean.getObject();
     }
 
 }
