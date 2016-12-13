@@ -1,0 +1,11 @@
+{
+  "directory": "bower-components",
+  "scripts": {
+    "preinstall": "",
+    "postinstall": "",
+    "preuninstall": ""
+  },
+  "ignoredDependencies": [
+    "jquery"
+  ]
+}

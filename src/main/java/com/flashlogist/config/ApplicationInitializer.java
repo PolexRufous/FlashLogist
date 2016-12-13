@@ -1,5 +1,6 @@
 package com.flashlogist.config;
 
+import com.flashlogist.global.constants.ApplicationsConfigConstants;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -9,7 +10,8 @@ public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherSe
                 RestConfiguration.class,
                 BaseConfiguration.class,
                 WebSecurityConfiguration.class,
-                DatabaseHibernateConfiguration.class
+                DatabaseHibernateConfiguration.class,
+                ApplicationsConfigConstants.class
         };
     }
 

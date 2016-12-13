@@ -1,5 +1,5 @@
 .delimiter {
-    height: 20%;
+    height: 15%;
 }
 
 .button-submit {
@@ -10,7 +10,7 @@
 }
 
 .login-wrapper {
-    width: 70%;
+    width: 35%;
     margin: 10vh auto;
 }
 
@@ -60,4 +60,14 @@
     color: #a3602a;
     width: 70%;
     text-align: center;
+}
+
+@media screen and (max-device-width: 480px) {
+    .login-wrapper {
+        width: 75%;
+    }
+
+    .login-form-container {
+        font-size: 1.5em;
+    }
 }

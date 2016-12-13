@@ -38,7 +38,7 @@ li.parent > ul {
 li.parent > ul > li {
     text-align: center;
     display: block;
-    width: 80.5%;
+    width: 90%;
     height: inherit;
     color: #7f7f5f;
     font-size: 2em;
