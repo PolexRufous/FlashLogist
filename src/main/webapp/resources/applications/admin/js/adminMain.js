@@ -5,6 +5,7 @@ require.config({
         backbone: '../bower_components/backbone/backbone-min',
         underscore: '../bower_components/underscore/underscore-min',
         jQuery: '../../../vendors/jQuery/dist/jquery.min',
+        jquery: '../../../vendors/jQuery/dist/jquery.min',
         validation: '../bower_components/backbone.validation/dist/backbone-validation-amd-min',
 
         //application js
