@@ -12,8 +12,10 @@
                     <span class="menu-span parent-span">Applications</span>
                     <ul>
                         <#list applications as application>
-                            <li><a href="<@spring.url '${application.url}' />"
-                            class="menu-link">${application.showName}</a></li>
+
+                            <li><span class="menu-span">
+                                <a href="<@spring.url '${application.url}' />"
+                            class="menu-link">${application.showName}</a></span></li>
                         </#list>
                     </ul>
                 </li>
