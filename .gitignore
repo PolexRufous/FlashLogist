@@ -10,7 +10,10 @@
 #vendor libraries
 **/main/webapp/resources/vendors
 **/bower-components
+**/bower_components
+node_modules
 **/node-modules
+**/node_modules
 # compilation
 bin
 target
