@@ -9,5 +9,8 @@
 </head>
 <body>
     <#include "../../baseparts/header.ftl" >
+    <main id="admin-main">
+        Loading ...
+    </main>
 </body>
 </html>

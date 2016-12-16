@@ -7,6 +7,8 @@ require.config({
         jQuery: '../../../vendors/jQuery/dist/jquery.min',
         jquery: '../../../vendors/jQuery/dist/jquery.min',
         validation: '../bower_components/backbone.validation/dist/backbone-validation-amd-min',
+        dust: '../bower_components/dustjs-linkedin/dist/dust-full',
+        dust_helpers: '../bower_components/dustjs-helpers/dist/dust-helpers',
 
         //application js
         userapp: 'usersManagementApplication',
@@ -20,22 +22,26 @@ require.config({
 
         //application css
         overrides: '../css/admin.overrides',
-        base: '../css/base.admin'
+        base: '../css/base.admin',
 
         //templates
-
+        templ_register: 'user.templates.registerer',
+        user_templ: '../templates/userrow.dust',
+        user_edit_templ: '../templates/useredit.dust',
+        users_templ: '../templates/users.dust'
 
     },
 
     map: {
         '*': {
-            css: '../../../vendors/require-css/css.min'
+            css: '../../../vendors/require-css/css.min',
+            text: '../../../vendors/text/text'
         }
     }
 
 });
 
-requirejs(["userapp", "css!base"], function (UserApp) {
-    define.amd.dust = true;
+requirejs(["userapp", "css!base", "templ_register"], function (UserApp) {
+
     UserApp.start();
 });
