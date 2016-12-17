@@ -1,0 +1,14 @@
+.main-image-container {
+    position: relative;
+    width: 70%;
+    height: auto;
+    margin: auto;
+    min-height: 70%;
+}
+
+.main-image-container img {
+    display: block;
+    width: 35%;
+    padding: 10vh 0 10vh;
+    margin: 0 auto;
+}

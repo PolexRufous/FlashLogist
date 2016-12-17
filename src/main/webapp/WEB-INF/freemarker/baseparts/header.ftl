@@ -1,15 +1,13 @@
 <#import "/spring.ftl" as spring/>
 <header class="main-header">
-    <section class="wrapper">
+    <section class="header-section">
     </section>
     <nav>
         <ul class="menu-container">
-            <li>
-                <span class="menu-span"><a href="#" class="menu-link">Home</a></span>
-            </li>
             <#if applications??>
                 <li class="parent">
                     <span class="menu-span parent-span">Applications</span>
+                    <div class="container">
                     <ul>
                         <#list applications as application>
 
@@ -18,11 +16,13 @@
                             class="menu-link">${application.showName}</a></span></li>
                         </#list>
                     </ul>
+                    </div>
                 </li>
             </#if>
             <#if principal??>
                 <li class="parent">
                     <span class=" menu-span parent-span span-user">${principal}</span>
+                    <div class="container">
                     <ul>
                         <li>
                             <form action="<@spring.url '/logout' />" method="post">
@@ -34,8 +34,39 @@
                             </form>
                         </li>
                     </ul>
+                    </div>
                 </li>
+            <#else>
+            <li class="parent">
+                <span class="menu-span parent-span">Log In</span>
+                <div class="login-form-container container">
+                    <form method="post" action="<@spring.url '/login' />">
+                        <fieldset>
+                            <div class="login-form-part">
+                                <label for="username">Login:</label>
+                                <input id="username" name="username" type="text" placeholder="Login"/>
+                            </div>
+                            <div class="login-form-part">
+                                <label for="password">Password:</label>
+                                <input id="password" name="password" type="password" placeholder="Password"/>
+                            </div>
+                            <div class="login-form-part login-form-buttons">
+                                <input type="submit" class="pure-button button-submit" value="Log In"/>
+                            </div>
+                            <input type="hidden"
+                                   name="${_csrf.parameterName}"
+                                   value="${_csrf.token}"/>
+                            <#if message??>
+                                <div class="login-form-part login-form-messages">
+                                    <label>${message}</label>
+                                </div>
+                            </#if>
+                        </fieldset>
+                    </form>
+                </div>
+            </li>
             </#if>
         </ul>
     </nav>
+    <hr />
 </header>

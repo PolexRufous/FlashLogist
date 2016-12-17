@@ -1,5 +1,5 @@
 {
-  "directory": "src/main/webapp/resources/vendors",
+  "directory": "vendors",
   "scripts": {
     "preinstall": "",
     "postinstall": "",

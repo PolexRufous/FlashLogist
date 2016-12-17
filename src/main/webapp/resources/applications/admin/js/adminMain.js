@@ -4,10 +4,9 @@ require.config({
         //libraries
         backbone: '../bower_components/backbone/backbone-min',
         underscore: '../bower_components/underscore/underscore-min',
-        jQuery: '../../../vendors/jQuery/dist/jquery.min',
-        jquery: '../../../vendors/jQuery/dist/jquery.min',
+        jquery: '../../../global/vendors/jQuery/dist/jquery.min',
         validation: '../bower_components/backbone.validation/dist/backbone-validation-amd-min',
-        dust: '../bower_components/dustjs-linkedin/dist/dust-full',
+        dust: '../bower_components/dustjs-linkedin/dist/dust-full.min',
         dust_helpers: '../bower_components/dustjs-helpers/dist/dust-helpers',
 
         //application js
@@ -34,14 +33,19 @@ require.config({
 
     map: {
         '*': {
-            css: '../../../vendors/require-css/css.min',
-            text: '../../../vendors/text/text'
+            css: '../../../global/vendors/require-css/css.min',
+            text: '../../../global/vendors/text/text'
         }
     }
 
 });
 
-requirejs(["userapp", "css!base", "templ_register"], function (UserApp) {
-
-    UserApp.start();
+requirejs(['css!base', 'css!overrides'], function () {
+    define.amd.dust = true;
+    require(['templ_register'], function () {
+            require(['userapp'], function (UserApp) {
+                UserApp.start();
+            });
+        }
+    );
 });

@@ -1,5 +1,6 @@
 <footer class="main-footer">
-    <section class="wrapper">
+    <hr />
+    <section class="footer-section">
 
     </section>
 </footer>

@@ -8,7 +8,7 @@
 **/main/**/initial-database.sql
 
 #vendor libraries
-**/main/webapp/resources/vendors
+**/main/webapp/**/vendors
 **/bower-components
 **/bower_components
 node_modules
