@@ -1,100 +1,3 @@
-/*
-.main-header {
-    width: 100%;
-    color: #b0b0b0;
-    background: #eee;
-    position: relative;
-}
-
-.main-header nav {
-    padding-bottom: 1vh;
-    padding-top: 1vh;
-    width: 100%;
-    text-align: center;
-}
-
-.main-header nav .menu-container {
-    width: 90%;
-    display: table;
-    margin: 0 auto;
-}
-
-.menu-container > li {
-    display: table-cell;
-    width: 20%;
-    height: 50%;
-    margin: 0 20px;
-    position: relative;
-    padding: 0 30px;
-}
-
-li.parent > ul {
-    position: absolute;
-    text-align: center;
-    display: none;
-    width: 100%;
-    height: 100%;
-    left: 0;
-}
-
-li.parent > ul > li {
-    text-align: center;
-    display: block;
-    width: 100%;
-    height: inherit;
-    color: #7f7f5f;
-    padding: 5px 30px 0 30px;
-}
-
-.menu-span {
-    padding: 5px 0;
-    display: block;
-    background-color: #d0cdcd;
-    font-size: 2em;
-    width: 100%;
-    height: 100%;
-    color: #71665b;
-    border: 1px solid #ddd;
-    position: relative;
-}
-
-.menu-span.span-user {
-    background: #e2dfb5;
-}
-
-.menu-span > a {
-    display: block;
-    height: 100%;
-    position: relative;
-}
-
-.parent-span:after {
-    content:  "\25BE";
-    position: absolute;
-}
-
-li.parent:hover > ul {
-    display: block;
-}
-
-li.parent:hover {
-    overflow-y: visible;
-}
-
-.main-header .menu-link {
-    color: inherit;
-    text-decoration: none;
-}
-
-#logout {
-    display: none;
-}
-
-.input-label {
-    cursor: pointer;
-}*/
-
-
 .main-header {
     width: 100%;
     color: #ad0b11;
@@ -171,5 +74,19 @@ li.parent:hover {
     font-size: .6em;
     color: #f00;
     width: 160%;
+
+}
+
+.menu-container .parent .container.current {
+    display: block;
+    height: auto;
+}
+
+.menu-span.parent-span {
+    cursor: pointer;
+}
+
+.menu-span.parent-span:hover {
+    text-decoration: underline;
 
 }
