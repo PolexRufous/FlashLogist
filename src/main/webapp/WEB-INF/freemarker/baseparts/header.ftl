@@ -4,6 +4,53 @@
     </section>
     <nav>
         <ul class="menu-container">
+        <#if principal??>
+            <li class="parent">
+                <span class=" menu-span parent-span span-user">${principal}</span>
+                <div class="container">
+                    <ul>
+                        <li>
+                            <form action="<@spring.url '/logout' />" method="post">
+                                <label class="input-label" for="logout">Log Out</label>
+                                <input type="hidden"
+                                       name="${_csrf.parameterName}"
+                                       value="${_csrf.token}"/>
+                                <input id="logout" type="submit" value="Log Out" class="logout-button" />
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        <#else>
+            <li class="parent">
+                <span class="menu-span parent-span">Log In</span>
+                <#if message??>
+                    <div class="login-form-messages">
+                        <label>${message}</label>
+                    </div>
+                </#if>
+                <div class="login-form-container container">
+                    <form method="post" action="<@spring.url '/login' />">
+                        <fieldset>
+                            <div class="login-form-part">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input id="username" name="username" type="text" placeholder="Login"/>
+                            </div>
+                            <div class="login-form-part">
+                                <i class="fa fa-key" aria-hidden="true"></i>
+                                <input id="password" name="password" type="password" placeholder="Password"/>
+                            </div>
+                            <div class="login-form-part login-form-buttons">
+                                <input type="submit" class="button-submit" value="Log In"/>
+                            </div>
+                            <input type="hidden"
+                                   name="${_csrf.parameterName}"
+                                   value="${_csrf.token}"/>
+                        </fieldset>
+                    </form>
+                </div>
+            </li>
+        </#if>
             <#if applications??>
                 <li class="parent">
                     <span class="menu-span parent-span">Applications</span>
@@ -18,53 +65,6 @@
                     </ul>
                     </div>
                 </li>
-            </#if>
-            <#if principal??>
-                <li class="parent">
-                    <span class=" menu-span parent-span span-user">${principal}</span>
-                    <div class="container">
-                    <ul>
-                        <li>
-                            <form action="<@spring.url '/logout' />" method="post">
-                                <label class="input-label" for="logout">Log Out</label>
-                                <input type="hidden"
-                                       name="${_csrf.parameterName}"
-                                       value="${_csrf.token}"/>
-                                <input id="logout" type="submit" value="Log Out" class="logout-button" />
-                            </form>
-                        </li>
-                    </ul>
-                    </div>
-                </li>
-            <#else>
-            <li class="parent">
-                <span class="menu-span parent-span">Log In</span>
-                <div class="login-form-container container">
-                    <form method="post" action="<@spring.url '/login' />">
-                        <fieldset>
-                            <div class="login-form-part">
-                                <label for="username">Login:</label>
-                                <input id="username" name="username" type="text" placeholder="Login"/>
-                            </div>
-                            <div class="login-form-part">
-                                <label for="password">Password:</label>
-                                <input id="password" name="password" type="password" placeholder="Password"/>
-                            </div>
-                            <div class="login-form-part login-form-buttons">
-                                <input type="submit" class="pure-button button-submit" value="Log In"/>
-                            </div>
-                            <input type="hidden"
-                                   name="${_csrf.parameterName}"
-                                   value="${_csrf.token}"/>
-                            <#if message??>
-                                <div class="login-form-part login-form-messages">
-                                    <label>${message}</label>
-                                </div>
-                            </#if>
-                        </fieldset>
-                    </form>
-                </div>
-            </li>
             </#if>
         </ul>
     </nav>
