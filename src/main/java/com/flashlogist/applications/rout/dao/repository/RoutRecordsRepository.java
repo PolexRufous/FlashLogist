@@ -1,6 +1,6 @@
-package com.flashlogist.rout.dao.repository;
+package com.flashlogist.applications.rout.dao.repository;
 
-import com.flashlogist.rout.dao.RoutRecord;
+import com.flashlogist.applications.rout.dao.RoutRecord;
 import com.flashlogist.vehicle.dao.Vehicle;
 
 import java.time.LocalDate;

@@ -1,7 +1,7 @@
-package com.flashlogist.rout.domain;
+package com.flashlogist.applications.rout.domain;
 
-import com.flashlogist.rout.dao.repository.RoutRecordsRepository;
-import com.flashlogist.rout.dao.RoutRecord;
+import com.flashlogist.applications.rout.dao.repository.RoutRecordsRepository;
+import com.flashlogist.applications.rout.dao.RoutRecord;
 import com.flashlogist.vehicle.dao.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

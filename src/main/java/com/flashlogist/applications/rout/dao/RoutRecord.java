@@ -1,4 +1,4 @@
-package com.flashlogist.rout.dao;
+package com.flashlogist.applications.rout.dao;
 
 import com.flashlogist.global.utils.dao.LocalDateConverter;
 import com.flashlogist.global.user.dao.User;

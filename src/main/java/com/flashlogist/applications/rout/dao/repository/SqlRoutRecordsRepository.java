@@ -1,7 +1,7 @@
-package com.flashlogist.rout.dao.repository;
+package com.flashlogist.applications.rout.dao.repository;
 
-import com.flashlogist.rout.dao.RoutRecord;
-import com.flashlogist.rout.dao.RoutRecord_;
+import com.flashlogist.applications.rout.dao.RoutRecord;
+import com.flashlogist.applications.rout.dao.RoutRecord_;
 import com.flashlogist.vehicle.dao.Vehicle;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

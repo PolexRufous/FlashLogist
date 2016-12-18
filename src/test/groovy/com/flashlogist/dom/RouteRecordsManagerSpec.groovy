@@ -1,8 +1,8 @@
 package com.flashlogist.dom
 
-import com.flashlogist.rout.dao.repository.RoutRecordsRepository
-import com.flashlogist.rout.dao.RoutRecord
-import com.flashlogist.rout.domain.RouteRecordsManager
+import com.flashlogist.applications.rout.dao.repository.RoutRecordsRepository
+import com.flashlogist.applications.rout.dao.RoutRecord
+import com.flashlogist.applications.rout.domain.RouteRecordsManager
 import com.flashlogist.vehicle.dao.Vehicle
 import spock.lang.Specification
 

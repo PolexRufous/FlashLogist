@@ -2,6 +2,7 @@ package com.flashlogist.applications.global;
 
 
 import com.flashlogist.applications.admin.AdminApplication;
+import com.flashlogist.applications.rout.RoutApplication;
 import com.flashlogist.global.user.dao.UserRole;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class ApplicationUtils {
 
     static {
         applicationMap.put("admin", new AdminApplication());
+        applicationMap.put("rout", new RoutApplication());
     }
 
     public static List<Application> getApplicationsForRole(UserRole userRole) {

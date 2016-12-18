@@ -1,6 +1,6 @@
-package com.flashlogist.rout.web.rest;
+package com.flashlogist.applications.rout.web.rest;
 
-import com.flashlogist.rout.domain.RouteRecordsManager;
+import com.flashlogist.applications.rout.domain.RouteRecordsManager;
 import com.flashlogist.vehicle.dao.Vehicle;
 import com.flashlogist.vehicle.domain.VehicleManager;
 import org.springframework.beans.factory.annotation.Autowired;
