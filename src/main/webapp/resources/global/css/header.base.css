@@ -38,6 +38,7 @@
     left: -30%;
     top: 230%;
     background: #fdeae3;
+    transition: opacity 0.1s ease-out;
 }
 
 .main-header > hr {
