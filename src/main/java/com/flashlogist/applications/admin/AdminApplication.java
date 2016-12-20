@@ -12,7 +12,7 @@ import java.util.List;
 
 public class AdminApplication implements Application {
 
-    private List<UserRole> ADMIN_ACCESSES = Arrays.asList(UserRole.ADMIN, UserRole.USER);
+    private List<UserRole> ADMIN_ACCESSES = Arrays.asList(UserRole.ADMIN);
     private String ADMIN_URL = "/admin";
     private String ADMIN_NAME = "admin";
     private String ADMIN_SHOW_NAME = "Admin";
