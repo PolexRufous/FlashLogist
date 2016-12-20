@@ -4,10 +4,9 @@
     <title>FL Main</title>
     <link rel="icon" href="<@spring.url '/resources/global/images/logo.png'/>" />
     <#include "baseparts/base.css.ftl" >
+    <#include "baseparts/base.js.ftl" >
     <link rel="stylesheet" href="<@spring.url '/resources/global/css/main.page.css'/>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <script src="<@spring.url '/resources/global/vendors/jQuery/dist/jquery.min.js'/>" ></script>
-    <script src="<@spring.url '/resources/global/js/header.base.js'/>" ></script>
 </head>
 <body>
     <#include "baseparts/header.ftl" >

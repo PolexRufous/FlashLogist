@@ -4,6 +4,7 @@
     <title>Rout managment</title>
     <link rel="icon" href="<@spring.url "/resources/applications/rout/images/favicon.ico" />" />
     <#include "../../baseparts/base.css.ftl" >
+    <#include "../../baseparts/base.js.ftl" >
 </head>
 <body>
 <#include "../../baseparts/header.ftl" >
