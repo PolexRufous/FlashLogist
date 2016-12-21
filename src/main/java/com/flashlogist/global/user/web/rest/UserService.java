@@ -14,7 +14,7 @@ import java.util.Collection;
 public class UserService {
 
     @Resource(name = "userManager")
-    UserManager userManager;
+    private UserManager userManager;
 
     @GetMapping
     @ResponseBody
@@ -24,7 +24,7 @@ public class UserService {
         if (users.isEmpty()) {
             return ResponseEntity.status(204).build();
         }
-        return ResponseEntity.status(201).body(users);
+        return ResponseEntity.status(200).body(users);
     }
 
     @GetMapping(value = "/{id}")
@@ -35,7 +35,7 @@ public class UserService {
         if (user == null) {
             return ResponseEntity.status(204).build();
         }
-        return ResponseEntity.status(201).body(user);
+        return ResponseEntity.status(200).body(user);
     }
 
 }

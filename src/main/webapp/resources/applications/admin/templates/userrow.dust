@@ -1,1 +1,2 @@
-<div>Hello world!</div>
+<td>{firstName}</td>
+<td>{lastName}</td>

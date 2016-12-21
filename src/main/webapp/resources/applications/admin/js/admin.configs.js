@@ -6,7 +6,8 @@ define(function () {
        useredit: 'useredit'
       },
       urls: {
-          users: '/rest/user'
+          base: 'falshlogist',
+          users: 'rest/user'
       }
     };
 });
