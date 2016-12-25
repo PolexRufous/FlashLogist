@@ -1,4 +1,5 @@
-define(['backbone', 'users', 'dust', 'config', 'userrow'], function (Backbone, users, dust, config, UserRowView) {
+define(['backbone', 'users', 'dust', 'config', 'userrow', 'user'], function (Backbone, users, dust, config,
+                                                                             UserRowView, UserModel) {
     return Backbone.View.extend({
         model: users,
         el: '#admin-main',
@@ -13,6 +14,11 @@ define(['backbone', 'users', 'dust', 'config', 'userrow'], function (Backbone, u
               }
             });
         },
+
+        events: {
+            'click .table-button.add-user-button': 'addEditUserRaw'
+        },
+
         render: function () {
                     var self = this;
                     dust.render(config.templates.users, {}, function (err, out) {
@@ -27,6 +33,12 @@ define(['backbone', 'users', 'dust', 'config', 'userrow'], function (Backbone, u
                             });
                         }
                     });
+        },
+
+        addEditUserRaw: function () {
+            this.$el.find('#users-container').append(
+                new UserRowView({model: new UserModel()}).renderEdit()
+            );
         }
     });
 });

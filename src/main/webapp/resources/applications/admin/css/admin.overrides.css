@@ -2,3 +2,9 @@
     color: #3b8c13;
 }
 
+.menu-span.parent-span.span-user::before {
+    content: "\f2bd";
+    display: inline-block;
+    font: normal normal normal 20px/1 FontAwesome;
+    padding-right: 3px;
+}

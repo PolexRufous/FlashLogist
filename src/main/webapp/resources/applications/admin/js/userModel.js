@@ -15,12 +15,17 @@ define(['backbone', 'config', 'validation'], function (Backbone, config) {
                 required: true,
                 msg: 'Login is required'
             },
-            email: [{
-                required: true,
-                msg: 'Email is required'},
-                {pattern: 'email',
-                msg: 'Please enter a valid email'
-            }],
+            email: [
+                {
+                    required: true,
+                    msg: 'Email is required'
+                },
+                {
+                    pattern: 'email',
+                    msg: 'Please enter a valid email'
+                }
+            ]
+
         }
     });
 });

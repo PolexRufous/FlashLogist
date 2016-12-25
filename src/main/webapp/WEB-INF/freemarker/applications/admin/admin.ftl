@@ -12,7 +12,7 @@
 <body>
     <#include "../../baseparts/header.ftl" >
     <main id="admin-main">
-        Loading ...
+        <i class="fa fa-spinner" aria-hidden="true"></i> Loading ...
     </main>
     <#include "../../baseparts/footer.ftl">
 </body>

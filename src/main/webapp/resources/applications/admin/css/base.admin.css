@@ -18,7 +18,7 @@
 }
 
 #users-table > thead {
-    border-bottom: 2px solid;
+    border-bottom: 1px solid #3b8c13;
 }
 
 #users-table > thead > tr > th {
@@ -41,13 +41,21 @@
 
 #users-table .table-button {
     color: #fff;
+    border-style: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: .8em;
 }
 
-.userButton.editButton, .userButton.unlockButton, .add-user-button {
+.userButton.editButton, .userButton.unlockButton,
+.add-user-button, .userButton.confirmButton {
     background-color: green;
 }
 
-.userButton.removeButton, .userButton.lockButton {
+.userButton.removeButton, .userButton.lockButton,
+.userButton.cancelButton {
     background-color: red;
 }
 
