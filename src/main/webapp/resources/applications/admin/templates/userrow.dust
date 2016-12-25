@@ -1,2 +1,15 @@
+<td>{login}</td>
 <td>{firstName}</td>
 <td>{lastName}</td>
+<td>{email}</td>
+<td>{role}</td>
+<td>{?available}Active{:else}Locked{/available}</td>
+<td><button class="table-button userButton editButton"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>{!
+    !}</button>&nbsp;{!
+    !}<button class="table-button userButton removeButton"><i class="fa fa-times-circle" aria-hidden="true"></i>{!
+    !}</button>&nbsp;{!
+    !}<button class="table-button userButton {?available}lockButton{:else}unlockButton{/available}">{!
+        !}{?available}<i class="fa fa-lock" aria-hidden="true"></i>{!
+        !}{:else}<i class="fa fa-unlock" aria-hidden="true"></i>{/available}{!
+    !}</button>{!
+!}</td>

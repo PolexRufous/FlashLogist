@@ -1,6 +1,6 @@
-package com.flashlogist.global.user.dao.repository;
+package com.flashlogist.applications.admin.usermanager.user.dao.repository;
 
-import com.flashlogist.global.user.dao.User;
+import com.flashlogist.applications.admin.usermanager.user.dao.User;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -46,8 +46,8 @@ public class SqlUserRepository implements UserRepository {
     }
 
     @Override
-    public void save(User user) {
-        entityManager.persist(user);
+    public User save(User user) {
+        return entityManager.merge(user);
     }
 
     @Override

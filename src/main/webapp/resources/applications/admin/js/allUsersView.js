@@ -21,7 +21,7 @@ define(['backbone', 'users', 'dust', 'config', 'userrow'], function (Backbone, u
                         } else {
                             self.$el.html(out);
                             self.model.each(function (user) {
-                                self.$el.append(
+                                self.$el.find('#users-container').append(
                                     new UserRowView({model: user}).render()
                                 );
                             });

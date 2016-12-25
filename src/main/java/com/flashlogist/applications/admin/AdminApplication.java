@@ -1,11 +1,7 @@
 package com.flashlogist.applications.admin;
 
 import com.flashlogist.applications.global.Application;
-import com.flashlogist.global.user.dao.UserRole;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.ApplicationContext;
-import org.springframework.core.env.Environment;
+import com.flashlogist.applications.admin.usermanager.user.dao.UserRole;
 
 import java.util.Arrays;
 import java.util.List;

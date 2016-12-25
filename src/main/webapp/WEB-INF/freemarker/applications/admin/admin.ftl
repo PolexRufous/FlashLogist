@@ -1,6 +1,7 @@
 <#import "/spring.ftl" as spring/>
 <html>
 <head>
+    <meta name='csrf-token' content={{ csrf_token }}>
     <title>FL Main</title>
     <link rel="icon" href="<@spring.url "/resources/applications/admin/images/favicon.ico" />" />
     <#include "../../baseparts/base.css.ftl" >
@@ -13,5 +14,6 @@
     <main id="admin-main">
         Loading ...
     </main>
+    <#include "../../baseparts/footer.ftl">
 </body>
 </html>

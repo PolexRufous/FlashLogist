@@ -1,7 +1,7 @@
 package com.flashlogist.applications.rout;
 
 import com.flashlogist.applications.global.Application;
-import com.flashlogist.global.user.dao.UserRole;
+import com.flashlogist.applications.admin.usermanager.user.dao.UserRole;
 
 import java.util.Arrays;
 import java.util.List;

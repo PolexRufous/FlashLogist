@@ -1,3 +1,54 @@
-body {
-    background: #7f7f5f;
+#admin-main {
+    width: 80%;
+    padding-top: 3vh;
+    margin: auto;
+    font-size: 2em;
+    min-height: 70%;
+    color: #3daf05;
 }
+
+#admin-main h3 {
+
+}
+
+#users-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: .8em;
+}
+
+#users-table > thead {
+    border-bottom: 2px solid;
+}
+
+#users-table > thead > tr > th {
+    font-weight: 900;
+}
+
+#users-table th, #users-table td {
+    padding: 1vh 1%;
+    text-align: left;
+    color: #3daf05;
+}
+
+#users-table > tbody > tr > td {
+    opacity: .7;
+}
+
+#users-table > tbody > tr:hover > td{
+    opacity: 1.0;
+}
+
+#users-table .table-button {
+    color: #fff;
+}
+
+.userButton.editButton, .userButton.unlockButton, .add-user-button {
+    background-color: green;
+}
+
+.userButton.removeButton, .userButton.lockButton {
+    background-color: red;
+}
+
+

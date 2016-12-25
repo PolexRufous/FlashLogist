@@ -1,7 +1,7 @@
 package com.flashlogist.applications.rout.dao;
 
 import com.flashlogist.global.utils.dao.LocalDateConverter;
-import com.flashlogist.global.user.dao.User;
+import com.flashlogist.applications.admin.usermanager.user.dao.User;
 import com.flashlogist.vehicle.dao.Vehicle;
 import lombok.Data;
 

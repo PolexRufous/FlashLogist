@@ -1,4 +1,4 @@
-package com.flashlogist.global.user.dao;
+package com.flashlogist.applications.admin.usermanager.user.dao;
 
 import lombok.Data;
 import org.codehaus.jackson.annotate.JsonIgnore;

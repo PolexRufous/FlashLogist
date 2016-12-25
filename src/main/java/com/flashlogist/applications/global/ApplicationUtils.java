@@ -3,7 +3,7 @@ package com.flashlogist.applications.global;
 
 import com.flashlogist.applications.admin.AdminApplication;
 import com.flashlogist.applications.rout.RoutApplication;
-import com.flashlogist.global.user.dao.UserRole;
+import com.flashlogist.applications.admin.usermanager.user.dao.UserRole;
 
 import java.util.List;
 import java.util.Map;

@@ -1,7 +1,7 @@
-package com.flashlogist.global.user.domain;
+package com.flashlogist.applications.admin.usermanager.user.domain;
 
-import com.flashlogist.global.user.dao.repository.UserRepository;
-import com.flashlogist.global.user.dao.User;
+import com.flashlogist.applications.admin.usermanager.user.dao.repository.UserRepository;
+import com.flashlogist.applications.admin.usermanager.user.dao.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,5 +27,17 @@ public class UserManager {
 
     public User getUserByEmail(String email) {
         return userRepository.getUserByEmail(email);
+    }
+
+    public User save(User user) {
+        return userRepository.save(user);
+    }
+
+    public User update(User user) {
+        return userRepository.update(user);
+    }
+
+    public void delete(User user) {
+        userRepository.delete(user);
     }
 }

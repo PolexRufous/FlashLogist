@@ -2,7 +2,7 @@ package com.flashlogist.global.springcontrollers;
 
 import com.flashlogist.applications.global.Application;
 import com.flashlogist.applications.global.ApplicationUtils;
-import com.flashlogist.global.user.dao.UserRole;
+import com.flashlogist.applications.admin.usermanager.user.dao.UserRole;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.security.Principal;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
