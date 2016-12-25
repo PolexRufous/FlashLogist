@@ -1,29 +1,45 @@
 package com.flashlogist.applications.global;
 
 
-import com.flashlogist.applications.admin.AdminApplication;
-import com.flashlogist.applications.rout.RoutApplication;
 import com.flashlogist.applications.admin.usermanager.user.dao.UserRole;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
+@Service(value = "applicationUtils")
 public class ApplicationUtils {
 
-    private static Map<String, Application> applicationMap = new ConcurrentHashMap<>();
+    @Resource(name = "adminApplication")
+    private Application adminApplication;
 
-    static {
-        applicationMap.put("admin", new AdminApplication());
-        applicationMap.put("rout", new RoutApplication());
+    @Resource(name = "routApplication")
+    private Application routApplication;
+
+
+    private Map<String, Application> applicationMap = new ConcurrentHashMap<>();
+
+    public ApplicationUtils() {
+
     }
 
-    public static List<Application> getApplicationsForRole(UserRole userRole) {
+    @PostConstruct
+    private void initApplicationsMap() {
+        applicationMap.put("admin", adminApplication);
+        applicationMap.put("rout", routApplication);
+    }
+
+    public List<Application> getApplicationsForRole(UserRole userRole) {
         return applicationMap.values().stream()
                 .filter(application -> application.isAvailableForRole(userRole))
                 .collect(Collectors.toList());
     }
+
+
 
 
 }

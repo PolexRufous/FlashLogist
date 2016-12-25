@@ -2,10 +2,12 @@ package com.flashlogist.applications.rout;
 
 import com.flashlogist.applications.global.Application;
 import com.flashlogist.applications.admin.usermanager.user.dao.UserRole;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Service("routApplication")
 public class RoutApplication implements Application {
     private List<UserRole> ADMIN_ACCESSES = Arrays.asList(UserRole.ADMIN, UserRole.USER);
 

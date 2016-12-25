@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.Resource;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,6 +23,8 @@ import static org.springframework.security.core.context.SecurityContextHolder.ge
 @RequestMapping("/main")
 public class MainDispatchController {
 
+    @Resource(name = "applicationUtils")
+    private ApplicationUtils applicationUtils;
 
     @GetMapping
     public String mainDispatch() {
@@ -40,7 +43,7 @@ public class MainDispatchController {
     @ModelAttribute(value = "applications")
     public List<Application> setApplications() {
         return getContext().getAuthentication().getAuthorities().stream()
-                .map(authority -> ApplicationUtils.getApplicationsForRole(UserRole.valueOf(authority.getAuthority())))
+                .map(authority -> applicationUtils.getApplicationsForRole(UserRole.valueOf(authority.getAuthority())))
                 .flatMap(List::stream)
                 .collect(Collectors.toList());
     }
