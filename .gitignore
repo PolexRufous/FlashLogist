@@ -20,3 +20,6 @@ target
 
 !/src/main/webapp/resources/applications/admin/bower.json
 !/src/main/webapp/resources/applications/admin/.bowerrc
+
+#other
+*.log
