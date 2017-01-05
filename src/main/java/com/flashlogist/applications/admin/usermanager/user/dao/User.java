@@ -27,14 +27,14 @@ public class User {
     @NotEmpty(message="Login cannot be empty")
     @NotNull(message="Login cannot be null")
     @Pattern(regexp="[A-Za-z0-9_]+", message="Use only ASCII letters, digits and _ simbol")
-    @Size(min = 6, max = 24, message="Login cannot be less than {min} letters and longer than {max} lettets")
+    @Size(min = 4, max = 24, message="Login cannot be less than {min} letters and longer than {max} lettets")
     @Column(name = "login", unique = true, nullable = false)
     private String login;
 
     @NotEmpty(message="Password cannot be empty")
     @NotNull(message="Password cannot be null")
     @Pattern(regexp="[A-Za-z0-9_]+", message="Use only ASCII letters, digits and _ simbol")
-    @Size(min = 6, max = 24, message="Password cannot be less than {min} letters and longer than {max} lettets")
+    @Size(min = 4, max = 24, message="Password cannot be less than {min} letters and longer than {max} lettets")
     @Column(name = "password", nullable = false)
     @JsonIgnore
     private String password;

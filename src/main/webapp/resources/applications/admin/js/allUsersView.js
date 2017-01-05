@@ -37,7 +37,9 @@ define(['backbone', 'users', 'dust', 'config', 'userrow', 'user'], function (Bac
 
         addEditUserRaw: function () {
             this.$el.find('#users-container').append(
-                new UserRowView({model: new UserModel()}).renderEdit()
+                new UserRowView({
+                    model: new UserModel()
+                }).renderEdit()
             );
         }
     });

@@ -3,7 +3,6 @@ require.config({
     paths: {
         //libraries
         backbone: '../bower_components/backbone/backbone-min',
-        'backbone.csrf': '../bower_components/backbone.csrf/dist/backbone.csrf.min',
         underscore: '../bower_components/underscore/underscore-min',
         jquery: '../../../global/vendors/jQuery/dist/jquery.min',
         validation: '../bower_components/backbone.validation/dist/backbone-validation-amd-min',
@@ -44,9 +43,20 @@ require.config({
 
 });
 
-requirejs(['backbone.csrf','css!overrides', 'css!base', 'css!fontawesome'], function (BackboneCSRF) {
+requirejs(['backbone','css!overrides', 'css!base', 'css!fontawesome'], function (Backbone) {
     define.amd.dust = true;
-    BackboneCSRF.initialize();
+
+    var sync = Backbone.sync;
+    var token = $("meta[name='_csrf']").attr("content");
+    var header = $("meta[name='_csrf_header']").attr("content");
+    Backbone.sync = function(method, model, options) {
+        options.beforeSend = function (xhr) {
+            xhr.setRequestHeader(header, token);
+        };
+
+        sync(method, model, options);
+    };
+
     require(['templ_register'], function () {
             require(['userapp'], function (UserApp) {
                 UserApp.start();

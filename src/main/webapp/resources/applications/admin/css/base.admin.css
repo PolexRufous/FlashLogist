@@ -4,7 +4,7 @@
     margin: auto;
     font-size: 2em;
     min-height: 70%;
-    color: #3daf05;
+    color: #3b8c13;
 }
 
 #admin-main h3 {
@@ -28,7 +28,7 @@
 #users-table th, #users-table td {
     padding: 1vh 1%;
     text-align: left;
-    color: #3daf05;
+    color: #3b8c13;
 }
 
 #users-table > tbody > tr > td {

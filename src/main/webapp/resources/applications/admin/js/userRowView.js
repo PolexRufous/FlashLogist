@@ -45,7 +45,40 @@ define(['backbone', 'user', 'config', 'dust'], function (Backbone, UserModel, co
         },
 
         cancelEdit: function () {
-            this.render();
+            if (this.model.isNew()) {
+                this.model.destroy();
+                this.remove();
+            } else {
+                this.render();
+            }
+        },
+
+        confirmEdit: function () {
+            var attributes = this._collectModelAttributes();
+            var self = this;
+            self.model.save(attributes, {
+               success: function () {
+                   self.render();
+               },
+                error: function () {
+                    console.error('Save error!');
+                }
+            });
+        },
+
+        _collectModelAttributes: function () {
+            var result = {};
+            var inputs = this.$el.find('input');
+            inputs.each(function (i) {
+                var name = this.name;
+                result[name] = this.value;
+            });
+            var selects = this.$el.find('select');
+            selects.each(function () {
+                var name = this.name;
+                result[name] = this.value;
+            });
+            return result;
         }
 
 

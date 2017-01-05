@@ -45,6 +45,11 @@ public class UserService {
     @Produces(value = "application/json")
     public ResponseEntity save(@RequestBody User user) {
         if (user != null) {
+
+            if (user.getPassword() == null) {
+                user.setPassword("123456");
+            }
+
             User responseUser = userManager.save(user);
             return ResponseEntity.status(201).body(responseUser);
         } else {

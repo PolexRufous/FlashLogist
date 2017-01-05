@@ -1,7 +1,8 @@
 <#import "/spring.ftl" as spring/>
 <html>
 <head>
-    <meta name='csrf-token' content={{ csrf_token }}>
+    <meta name="_csrf_header" content="${_csrf.headerName}"/>
+    <meta name="_csrf" content="${_csrf.token}"/>
     <title>FL Main</title>
     <link rel="icon" href="<@spring.url "/resources/applications/admin/images/favicon.ico" />" />
     <#include "../../baseparts/base.css.ftl" >

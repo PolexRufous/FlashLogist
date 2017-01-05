@@ -1,4 +1,4 @@
-<td>{?id}{login}{:else}<input name="login" type="text" value="{login}" />{/id}{login}</td>
+<td>{?id}{login}{:else}<input name="login" type="text" value="{login}" />{/id}</td>
 <td><input name="firstName" type="text" value="{firstName}" /></td>
 <td><input name="lastName" type="text" value="{lastName}" /></td>
 <td><input name="email" type="email" value="{email}" /></td>
