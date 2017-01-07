@@ -57,6 +57,33 @@
 .userButton.removeButton, .userButton.lockButton,
 .userButton.cancelButton {
     background-color: red;
+    position: relative;
+}
+
+
+#popup-dialog {
+    opacity: 1;
+}
+
+.confirm-popup {
+    position: absolute;
+    min-height: 3vh;
+    z-index: 99;
+    border: 2px solid #3C510C ;
+    border-radius: 3px;
+    background-color: #8699A4;
+}
+
+.confirm-popup > hr {
+    margin: 1vh;
+}
+
+.confirm-popup-button {
+    display: block;
+    width: 30%;
+    float: left;
+    border-radius: 3px;
+    margin-left: 10%;
 }
 
 

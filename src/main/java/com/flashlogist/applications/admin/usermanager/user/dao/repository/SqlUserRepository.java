@@ -46,12 +46,18 @@ public class SqlUserRepository implements UserRepository {
     }
 
     @Override
+    public void delete(long id) {
+        User user = getUserById(id);
+        delete(user);
+    }
+
+    @Override
     public User save(User user) {
         return entityManager.merge(user);
     }
 
     @Override
     public void delete(User user) {
-        entityManager.remove(user);
+        entityManager.remove(entityManager.contains(user) ? user : entityManager.merge(user));
     }
 }

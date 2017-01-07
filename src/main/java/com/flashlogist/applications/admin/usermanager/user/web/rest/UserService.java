@@ -74,8 +74,9 @@ public class UserService {
     @ResponseBody
     @Consumes(value = "application/json")
     @Produces(value = "application/json")
-    public ResponseEntity delete(@PathVariable("id") Long id, @RequestBody User user) {
-        if (id != null && id != 0) {
+    public ResponseEntity delete(@PathVariable("id") Long id) {
+        if (id != 0) {
+            User user = userManager.getUserById(id);
             userManager.delete(user);
             return ResponseEntity.status(202).build();
         } else {

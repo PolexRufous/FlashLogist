@@ -1,5 +1,8 @@
 .main-header {
     color: #3b8c13;
+    background: url("../images/adminheaderpict.png") center no-repeat;
+    background-size: contain;
+
 }
 
 .menu-span.parent-span.span-user::before {
