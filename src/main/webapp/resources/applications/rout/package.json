@@ -1,7 +1,7 @@
 {
-  "name": "flashlogist",
+  "name": "flashlogist:rout",
   "version": "1.0.0",
-  "description": "Set of mini applications",
+  "description": "Rout subapplication",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,8 +18,14 @@
   },
   "homepage": "https://github.com/PolexRufous/FlashLogist#readme",
   "devDependencies": {
-    "browser-sync": "^2.18.6",
-    "gulp": "^3.9.1",
-    "gulp-bower": "0.0.13"
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-jasmine-phantom": "^3.0.0",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^2.2.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^2.0.0",
+    "gulp-imagemin": "^3.1.1",
+    "imagemin-pngquant": "^5.0.0",
+    "require-dir": "^0.3.1"
   }
 }

@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var bower = require('gulp-bower');
-
+var requireDir = require('require-dir');
 
 const paths = {
   global: 'src/main/webapp/resources/global',
@@ -46,5 +46,8 @@ gulp.task('bower:admin', function () {
 //END OF ADMIN APPLICATIONS TASKS
 
 
-
-
+//ROUT APPLICATION TASKS
+//****************
+requireDir('src/main/webapp/resources/applications/rout');
+//***************
+//END OF ROUT APPLICATIONS TASKS
