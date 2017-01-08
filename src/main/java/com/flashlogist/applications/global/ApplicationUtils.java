@@ -20,6 +20,9 @@ public class ApplicationUtils {
     @Resource(name = "routApplication")
     private Application routApplication;
 
+    @Resource(name = "profileApplication")
+    private Application profileApplication;
+
 
     private Map<String, Application> applicationMap = new ConcurrentHashMap<>();
 
@@ -29,8 +32,9 @@ public class ApplicationUtils {
 
     @PostConstruct
     private void initApplicationsMap() {
-        applicationMap.put("admin", adminApplication);
+        applicationMap.put(adminApplication.getName(), adminApplication);
         applicationMap.put("rout", routApplication);
+        applicationMap.put(profileApplication.getName(), profileApplication);
     }
 
     public List<Application> getApplicationsForRole(UserRole userRole) {
