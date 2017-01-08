@@ -50,7 +50,8 @@
 }
 
 .userButton.editButton, .userButton.unlockButton,
-.add-user-button, .userButton.confirmButton {
+.add-user-button, .userButton.confirmButton,
+.table-button.refresh-button {
     background-color: green;
 }
 
@@ -84,6 +85,10 @@
     float: left;
     border-radius: 3px;
     margin-left: 10%;
+}
+
+.errors {
+    color: #ad0b11;
 }
 
 

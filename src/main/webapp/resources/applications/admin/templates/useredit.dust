@@ -10,7 +10,7 @@
 </td>
 <td>
     <select name="available">
-        <option value="true">Available</option>
+        <option value="true">Active</option>
         <option value="false">Locked</option>
     </select>
 </td>

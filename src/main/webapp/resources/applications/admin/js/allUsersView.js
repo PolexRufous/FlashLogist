@@ -16,14 +16,15 @@ define(['backbone', 'users', 'dust', 'config', 'userrow', 'user'], function (Bac
         },
 
         events: {
-            'click .table-button.add-user-button': 'addEditUserRaw'
+            'click .table-button.add-user-button': 'addEditUserRaw',
+            'click .table-button.refresh-button': 'refreshCollection'
         },
 
         render: function () {
                     var self = this;
                     dust.render(config.templates.users, {}, function (err, out) {
                         if (err) {
-                            cosole.error(err);
+                            console.error(err);
                         } else {
                             self.$el.html(out);
                             self.model.each(function (user) {
@@ -41,6 +42,11 @@ define(['backbone', 'users', 'dust', 'config', 'userrow', 'user'], function (Bac
                     model: new UserModel()
                 }).renderEdit()
             );
+        },
+
+        refreshCollection: function () {
+            //TODO check issue with phantom views
+            this.initialize();
         }
     });
 });

@@ -18,8 +18,13 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="2">{!
-                    !}<button class="table-button add-user-button">{!
+                <td colspan="2">
+                    {!
+                    !}<button class="table-button refresh-button">{!
+                        !}<i class="fa fa-refresh" aria-hidden="true"></i>{!
+                    !}</button>
+                    &nbsp;
+                    <button class="table-button add-user-button">{!
                         !}<i class="fa fa-user-plus" aria-hidden="true"></i>{!
                     !}</button>{!
                 !}</td>

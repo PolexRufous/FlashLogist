@@ -1,4 +1,4 @@
-define(['backbone', 'user', 'config', 'dust'], function (Backbone, UserModel, config, dust) {
+define(['backbone', 'user', 'config', 'dust', 'jquery'], function (Backbone, UserModel, config, dust, $) {
     return Backbone.View.extend({
         model: UserModel,
         tagName: 'tr',
@@ -17,7 +17,21 @@ define(['backbone', 'user', 'config', 'dust'], function (Backbone, UserModel, co
         },
 
         initialize: function () {
+            Backbone.Validation.bind(this);
+            var self =this;
+            this.model.on('invalid', function (model, params) {
+                self._clearPopups();
+                var errorPopup = $('<div></div>');
+                errorPopup.addClass('errors');
+                errorPopup.attr('id', 'popup-dialog');
 
+                $.each(params, function(key, value) {
+                    errorPopup.append($('<p></p>').text(value));
+                });
+
+                self.$el.after(errorPopup);
+
+            });
         },
         render: function () {
             var self = this;
@@ -68,6 +82,7 @@ define(['backbone', 'user', 'config', 'dust'], function (Backbone, UserModel, co
         },
 
         cancelEdit: function () {
+            this._clearPopups();
             if (this.model.isNew()) {
                 this.model.destroy();
                 this.remove();

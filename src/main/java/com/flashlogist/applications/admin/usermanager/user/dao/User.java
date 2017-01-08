@@ -27,7 +27,7 @@ public class User {
     @NotEmpty(message="Login cannot be empty")
     @NotNull(message="Login cannot be null")
     @Pattern(regexp="[A-Za-z0-9_]+", message="Use only ASCII letters, digits and _ simbol")
-    @Size(min = 4, max = 24, message="Login cannot be less than {min} letters and longer than {max} lettets")
+    @Size(min = 4, max = 24, message="Login cannot be less than {min} letters and longer than {max} letters")
     @Column(name = "login", unique = true, nullable = false)
     private String login;
 
