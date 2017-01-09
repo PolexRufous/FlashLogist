@@ -10,45 +10,49 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+const reporters = require('jasmine-reporters');
+var appPath = 'src/main/webapp/resources/applications/rout/';
 
-gulp.task('rout', ['rout:test', 'rout:styles', 'rout:copy-images', 'rout:copy-js'], function () {
-    gulp.watch('sass/**/*.scss', ['rout:styles']);
-    gulp.watch('js/**/*.js', ['rout:copy-js']);
-
-});
+gulp.task('rout', [
+    'rout:test',
+    'rout:styles',
+    'rout:copy-images',
+    'rout:copy-js'],
+    function () {});
 
 gulp.task('rout:styles', function() {
-    gulp.src('sass/**/*.scss')
+    gulp.src(appPath + 'sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 2 versions']
         }))
-        .pipe(gulp.dest('dist/css'))
+        .pipe(gulp.dest(appPath + 'dist/css'))
         .pipe(browserSync.stream());
 });
 
 gulp.task('rout:copy-images', function () {
-   gulp.src('images/*')
+   gulp.src(appPath + 'images/*')
        .pipe(imagemin({
            progressive: true,
            use: [pngquant()]
        }))
-       .pipe(gulp.dest('dist/images'));
+       .pipe(gulp.dest(appPath +'dist/images'));
 });
 
 gulp.task('rout:copy-js', function () {
-    gulp.src('js/*')
+    gulp.src(appPath + 'js/*')
         .pipe(sourcemaps.init())
         .pipe(concat('all.js'))
         .pipe(uglify())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest(appPath +'dist/js'));
 });
 
 gulp.task('rout:test', function () {
-    gulp.src('tests/spec/extra-spec.js')
+    gulp.src(appPath + 'tests/spec/extra-spec.js')
         .pipe(jasmine({
             //integration:true,
-            vendor:'js/**/*.js'
+            vendor:'js/**/*.js',
+            reporter: new reporters.JUnitXmlReporter()
         }));
 });
