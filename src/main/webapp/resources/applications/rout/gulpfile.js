@@ -22,10 +22,12 @@ gulp.task('rout', [
 
 gulp.task('rout:styles', function() {
     gulp.src(appPath + 'sass/**/*.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 2 versions']
         }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(appPath + 'dist/css'))
         .pipe(browserSync.stream());
 });
@@ -43,7 +45,9 @@ gulp.task('rout:copy-js', function () {
     gulp.src(appPath + 'js/*')
         .pipe(sourcemaps.init())
         .pipe(concat('all.js'))
-        .pipe(uglify())
+        .pipe(uglify().on('error', function(e){
+            console.log(e);
+        }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(appPath +'dist/js'));
 });
