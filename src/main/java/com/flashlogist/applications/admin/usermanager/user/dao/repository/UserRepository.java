@@ -12,4 +12,5 @@ public interface UserRepository {
     void delete(User user);
     User update(User user);
     void delete(long id);
+    User getUserByLogin(String login);
 }

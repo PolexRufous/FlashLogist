@@ -42,7 +42,7 @@ gulp.task('rout:copy-images', function () {
 });
 
 gulp.task('rout:copy-js', function () {
-    gulp.src(appPath + 'js/*')
+    gulp.src([appPath + 'js/*', '!' + appPath + 'js/require-conf.js'])
         .pipe(sourcemaps.init())
         .pipe(concat('all.js'))
         .pipe(uglify().on('error', function(e){

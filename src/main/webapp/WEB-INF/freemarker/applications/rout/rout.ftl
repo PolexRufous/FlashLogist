@@ -17,7 +17,7 @@
     </div>
 </main>
 <#include "../../baseparts/footer.ftl" >
-<script src="<@spring.url '/resources/applications/rout/dist/js/all.js' />" ></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAk9Xy_JEOMGwoHuO-WebODfHRKyBhXCYg&callback=initMap"></script>
+<script data-main="<@spring.ur '/resources/applications/rout/js/require-cong.js' />"
+ src="<@spring.url '/resources/global/vendors/requirejs/require.js' />" async></script>
 </body>
 </html>

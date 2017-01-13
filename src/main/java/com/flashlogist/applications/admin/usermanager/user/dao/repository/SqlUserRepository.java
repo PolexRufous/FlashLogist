@@ -52,6 +52,15 @@ public class SqlUserRepository implements UserRepository {
     }
 
     @Override
+    public User getUserByLogin(String login) {
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<User> u = cb.createQuery(User.class);
+        Root<User> fromUser = u.from(User.class);
+        TypedQuery<User> allQuery = entityManager.createQuery(u.select(fromUser).where(cb.equal(fromUser.get("login"), login)));
+        return allQuery.getSingleResult();
+    }
+
+    @Override
     public User save(User user) {
         return entityManager.merge(user);
     }

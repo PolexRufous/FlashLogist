@@ -40,4 +40,8 @@ public class UserManager {
     public void delete(User user) {
         userRepository.delete(user);
     }
+
+    public User getUserByLogin(String login) {
+        return userRepository.getUserByLogin(login);
+    }
 }
