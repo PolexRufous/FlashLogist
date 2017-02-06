@@ -1,19 +1,21 @@
 'use strict';
-
+let configs  = {
+    mapApiKey :  'AIzaSyAk9Xy_JEOMGwoHuO-WebODfHRKyBhXCYg',
+    mapLibraries: ''
+};
 
 requirejs.config({
     baseUrl: '/resources/applications/rout/dist/js',
 
     paths: {
-        all: 'all',
-        jquery: '../../../global/vendors/jQuery/dist/jquery.slim',
-        maps: '//maps.googleapis.com/maps/api/js?key=AIzaSyAk9Xy_JEOMGwoHuO-WebODfHRKyBhXCYg&callback=initMap'
+        maps: 'maps/maps',
+        mapStyles: 'maps/mapStyles',
+        jquery: '../../../../global/vendors/jQuery/dist/jquery',
+        mapsAPI: '//maps.googleapis.com/maps/api/js?key=' + configs.mapApiKey + '&callback=initMap'
     }
 });
 
-requirejs(['jquery', 'all', 'maps'], function () {
+/*
+requirejs(['jquery', 'maps', 'mapStyles', 'maps'], function () {
 
-});
-
-
-
+});*/

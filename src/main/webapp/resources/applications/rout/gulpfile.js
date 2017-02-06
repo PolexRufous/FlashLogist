@@ -1,17 +1,19 @@
 'use strict';
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var jasmine = require('gulp-jasmine-phantom');
-var browserSync = require('browser-sync');
-var sourcemaps = require('gulp-sourcemaps');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin');
-var pngquant = require('imagemin-pngquant');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const jasmine = require('gulp-jasmine-phantom');
+const browserSync = require('browser-sync');
+const sourcemaps = require('gulp-sourcemaps');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const imagemin = require('gulp-imagemin');
+const pngquant = require('imagemin-pngquant');
 const reporters = require('jasmine-reporters');
-var appPath = 'src/main/webapp/resources/applications/rout/';
+const babel = require('gulp-babel');
+const appPath = 'src/main/webapp/resources/applications/rout/';
+const clean = require('gulp-clean');
 
 gulp.task('rout', [
     'rout:test',
@@ -43,12 +45,16 @@ gulp.task('rout:copy-images', function () {
 
 gulp.task('rout:copy-js', function () {
     gulp.src([appPath + 'js/**/*.js', '!' + appPath + 'js/require-conf.js'])
-        .pipe(sourcemaps.init())
-        .pipe(concat('all.js'))
-        .pipe(uglify().on('error', function(e){
-            console.log(e);
+        .pipe(clean)
+        //.pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['es2015']
         }))
-        .pipe(sourcemaps.write())
+        //.pipe(concat('all.js'))
+        // .pipe(uglify().on('error', function(e){
+        //     console.log(e);
+        // }))
+       // .pipe(sourcemaps.write())
         .pipe(gulp.dest(appPath +'dist/js'));
 });
 

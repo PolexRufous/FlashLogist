@@ -12,7 +12,7 @@ define(function () {
         },
 
         messages: {
-            confirmDeleteUser: 'Are you really want to remove this user?'
+            confirmDeleteUser: 'Do you really want to remove this user?'
         }
 
     };

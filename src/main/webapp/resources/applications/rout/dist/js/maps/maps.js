@@ -12,11 +12,11 @@ define(['mapStyles'], function (require) {
         }
 
         function callback(position) {
-            let center = {
+            var center = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
-            let map = createMap(center);
+            var map = createMap(center);
 
             createInfoWindow(map, center, 'You are here');
         }
@@ -30,20 +30,14 @@ define(['mapStyles'], function (require) {
             });
         }
 
-
         function createInfoWindow(map, position, content) {
-            let infoWindow = new google.maps.InfoWindow({map: map});
+            var infoWindow = new google.maps.InfoWindow({ map: map });
             infoWindow.setPosition(position);
             infoWindow.setContent(content);
         }
 
         function handleLocationError(browserHasGeolocation) {
-            console.log(browserHasGeolocation ?
-                'Error: The Geox`location service failed.' :
-                'Error: Your browser doesn\'t support geolocation.');
+            console.log(browserHasGeolocation ? 'Error: The Geox`location service failed.' : 'Error: Your browser doesn\'t support geolocation.');
         }
     }
 });
-
-
-
