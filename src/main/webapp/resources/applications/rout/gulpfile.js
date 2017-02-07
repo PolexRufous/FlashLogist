@@ -43,9 +43,8 @@ gulp.task('rout:copy-images', function () {
        .pipe(gulp.dest(appPath +'dist/images'));
 });
 
-gulp.task('rout:copy-js', function () {
+gulp.task('rout:copy-js', ['rout:js-clean-dest'], function () {
     gulp.src([appPath + 'js/**/*.js', '!' + appPath + 'js/require-conf.js'])
-        .pipe(clean)
         //.pipe(sourcemaps.init())
         .pipe(babel({
             presets: ['es2015']
@@ -56,6 +55,11 @@ gulp.task('rout:copy-js', function () {
         // }))
        // .pipe(sourcemaps.write())
         .pipe(gulp.dest(appPath +'dist/js'));
+});
+
+gulp.task('rout:js-clean-dest', function () {
+   return gulp.src([appPath + 'dist/js'])
+       .pipe(clean())
 });
 
 gulp.task('rout:test', function () {

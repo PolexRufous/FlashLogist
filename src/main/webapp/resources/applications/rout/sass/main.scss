@@ -3,6 +3,7 @@ html, body {
   padding: 0;
   font-family: Arial;
   background-color: #fffbfa;
+  line-height: normal;
 }
 
 h1 {
@@ -14,13 +15,14 @@ h1 {
   font-size: 5em;
 }
 
-div.main {
-  max-width: 700px;
+main {
   margin: 0 auto;
+  position: relative;
+  overflow: auto;
 
   p {
     padding: 1em;
-    color: #FFC2A1;
+    color: #7d7d7d;
   }
 
   aside {
@@ -45,9 +47,25 @@ div.main {
       filter: invert(1);
     }
   }
+
+  #map {
+    width: calc(100% - 340px);
+    height: 85%;
+    float: left;
+  }
+
+
+  .options-box {
+    border-radius: 3px;
+    padding: 10px 10px 30px 10px;
+    text-align: left;
+    width: 340px;
+    float: left;
+  }
 }
 
-#map {
-  width:100%;
-  height: 500px;
+.main-footer {
+  height:0;
+  min-height: 0;
 }
+

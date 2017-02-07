@@ -1,12 +1,14 @@
+'use strict';
+
 define(function (require) {
 
     return [
-        /*{
+        {
             featureType: 'all',
             stylers: [
                 {saturation: -80}
             ]
-        },*/
+        },
         {
             featureType: 'road.arterial',
             elementType: 'geometry',
