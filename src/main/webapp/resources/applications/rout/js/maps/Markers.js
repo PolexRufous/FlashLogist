@@ -1,8 +1,8 @@
 'use strict';
 
 define(['maps', 'infoWindow'], function (Maps, InfoWindow) {
-    let defaultIcon = makeMarkerIcon('0091ff');
-    let highlightedIcon = makeMarkerIcon('FFFF24');
+    let defaultIcon = makeMarkerIcon('c25b5b');
+    let highlightedIcon = makeMarkerIcon('6590b3');
     let markers = [];
 
     function makeMarkerIcon(markerColor) {
@@ -18,10 +18,10 @@ define(['maps', 'infoWindow'], function (Maps, InfoWindow) {
 
     function hideListings() {
         markers.forEach(function (marker) {
-            marker.setMap(null);
             if (marker.infowindow) {
                 marker.infowindow.close();
             }
+            marker.setMap(null);
         });
     }
 

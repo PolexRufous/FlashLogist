@@ -20,6 +20,7 @@ requirejs.config({
         mapStyles: 'maps/MapStyles',
         markers: 'maps/Markers',
         distanceCalculator: 'maps/DistanceCalculator',
+        directoryCalculator: 'maps/DirectionCalculator',
         infoWindow : 'maps/InfoWindow',
         mapsAPI: '//maps.googleapis.com/maps/api/js?key=' + configs.mapApiKey
     }

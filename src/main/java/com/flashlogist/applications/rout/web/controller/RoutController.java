@@ -25,9 +25,9 @@ public class RoutController {
     @GetMapping
     public ModelAndView mainRoutPage(ModelAndView model, Principal principal) {
         model.setViewName(Page.ROUT_MAIN.getView());
-        User user = userManager.getUserByLogin(principal.getName());
-        Collection<RoutRecord> routRecords = routRecordsRepository.getRecordsByUser(user);
-        model.addObject("routs", routRecords);
+        //User user = userManager.getUserByLogin(principal.getName());
+        //Collection<RoutRecord> routRecords = routRecordsRepository.getRecordsByUser(user);
+        //model.addObject("routs", routRecords);
         return model;
     }
 }

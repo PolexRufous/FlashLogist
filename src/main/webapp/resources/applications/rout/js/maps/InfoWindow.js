@@ -4,9 +4,10 @@ define(['maps'], function (Maps) {
     let map = Maps.map;
 
     function createInfoWindow(content) {
-        return new google.maps.InfoWindow({
+        let infoWindow = new google.maps.InfoWindow({
             content: content
         });
+        return infoWindow;
     }
 
     function populateInfoWindow(marker, infoWindow) {

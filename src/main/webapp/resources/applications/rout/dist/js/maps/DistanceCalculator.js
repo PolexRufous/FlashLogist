@@ -1,28 +1,28 @@
 'use strict';
 
 define(['maps', 'markers', 'infoWindow', 'events', 'directoryCalculator'], function (Maps, Markers, InfoWindow, Events, DirectoryCalculator) {
-    let destination = document.querySelector('#search-within-time-text').value;
-    let mode = document.querySelector('#mode').value;
-    let selector = '#search-within-time';
-    let form = document.querySelector(selector);
+    var destination = document.querySelector('#search-within-time-text').value;
+    var mode = document.querySelector('#mode').value;
+    var selector = '#search-within-time';
+    var form = document.querySelector(selector);
 
     function calculateDistance() {
         Markers.hideListings();
-        let distanceMatrix = createDistanceMatrix();
-        let distanceMatrixService = new google.maps.DistanceMatrixService;
+        var distanceMatrix = createDistanceMatrix();
+        var distanceMatrixService = new google.maps.DistanceMatrixService();
         distanceMatrixService.getDistanceMatrix(distanceMatrix, callback);
     }
 
     function createDistanceMatrix() {
-        let origins = [];
-        for (let i = 0; i < Markers.markers.length; i++) {
+        var origins = [];
+        for (var i = 0; i < Markers.markers.length; i++) {
             origins[i] = Markers.markers[i].position;
         }
 
         return {
             origins: origins,
             destinations: [destination],
-            travelMode: google.maps.TravelMode[mode],
+            travelMode: google.maps.TravelMode[mode]
         };
     }
 
@@ -35,9 +35,9 @@ define(['maps', 'markers', 'infoWindow', 'events', 'directoryCalculator'], funct
     }
 
     function displayMarkersWithin(response) {
-        let atLeastOne = false;
-        for (let i = 0; i < response.rows.length; i++) {
-            let resultsForOrigin = response.rows[i].elements;
+        var atLeastOne = false;
+        for (var i = 0; i < response.rows.length; i++) {
+            var resultsForOrigin = response.rows[i].elements;
             if (processResultsForOrigin(resultsForOrigin, i, response.originAddresses[i])) {
                 atLeastOne = true;
             }
@@ -48,15 +48,15 @@ define(['maps', 'markers', 'infoWindow', 'events', 'directoryCalculator'], funct
     }
 
     function processResultsForOrigin(resultsForOrigin, markerIndex, address) {
-        let atLeastOne = false;
-        for (let j = 0; j < resultsForOrigin.length; j++) {
-            let element = resultsForOrigin[j];
+        var atLeastOne = false;
+        for (var j = 0; j < resultsForOrigin.length; j++) {
+            var element = resultsForOrigin[j];
             if (element.status === "OK") {
                 atLeastOne = true;
-                let button = getDisplayDirectionButton(address, markerIndex);
-                let div = createInfoWindowDiv(button, element);
-                let infowindow = InfoWindow.createInfoWindow(div);
-                let marker = Markers.markers[markerIndex];
+                var button = getDisplayDirectionButton(address, markerIndex);
+                var div = createInfoWindowDiv(button, element);
+                var infowindow = InfoWindow.createInfoWindow(div);
+                var marker = Markers.markers[markerIndex];
                 marker.setMap(Maps.map);
                 InfoWindow.populateInfoWindow(marker, infowindow);
                 marker.infowindow = infowindow;
@@ -72,15 +72,15 @@ define(['maps', 'markers', 'infoWindow', 'events', 'directoryCalculator'], funct
     }
 
     function setButtonListener(button, markerIndex) {
-            let selector = '#marker' + markerIndex;
-            Events.subscribe(button, selector, 'click', DirectoryCalculator.displayDirections);
+        var selector = '#marker' + markerIndex;
+        Events.subscribe(button, selector, 'click', DirectoryCalculator.displayDirections);
     }
 
     function getDisplayDirectionButton(address, markerIndex, routElement) {
 
-        let escapedAddress = address.replace('\'', '');
+        var escapedAddress = address.replace('\'', '');
 
-        let input = document.createElement('input');
+        var input = document.createElement('input');
         input.setAttribute('id', 'marker' + markerIndex);
         input.setAttribute('index', markerIndex);
         input.setAttribute('type', 'button');
@@ -93,11 +93,11 @@ define(['maps', 'markers', 'infoWindow', 'events', 'directoryCalculator'], funct
     }
 
     function createInfoWindowDiv(button, routElement) {
-        let distanceText = routElement.distance.text;
-        let durationText = routElement.duration.text;
+        var distanceText = routElement.distance.text;
+        var durationText = routElement.duration.text;
 
-        let div = document.createElement('div');
-        let span = document.createTextNode(durationText + ' away, ' + distanceText);
+        var div = document.createElement('div');
+        var span = document.createTextNode(durationText + ' away, ' + distanceText);
         div.appendChild(span);
         div.appendChild(button);
 
@@ -105,5 +105,4 @@ define(['maps', 'markers', 'infoWindow', 'events', 'directoryCalculator'], funct
     }
 
     Events.subscribe(form, selector, 'submit', calculateDistance);
-})
-;
+});
