@@ -1,13 +1,15 @@
 'use strict';
 
 define(['maps', 'markers', 'infoWindow', 'events', 'directoryCalculator'], function (Maps, Markers, InfoWindow, Events, DirectoryCalculator) {
-    let destination = document.querySelector('#search-within-time-text').value;
-    let mode = document.querySelector('#mode').value;
-    let selector = '#search-within-time';
-    let form = document.querySelector(selector);
+    const selector = '#search-within-time';
+    const form = document.querySelector(selector);
+    let destination;
+    let mode;
 
     function calculateDistance() {
         Markers.hideListings();
+        mode = document.querySelector('#mode').value;
+        destination = document.querySelector('#search-within-time-text').value;
         let distanceMatrix = createDistanceMatrix();
         let distanceMatrixService = new google.maps.DistanceMatrixService;
         distanceMatrixService.getDistanceMatrix(distanceMatrix, callback);
@@ -18,7 +20,6 @@ define(['maps', 'markers', 'infoWindow', 'events', 'directoryCalculator'], funct
         for (let i = 0; i < Markers.markers.length; i++) {
             origins[i] = Markers.markers[i].position;
         }
-
         return {
             origins: origins,
             destinations: [destination],
